@@ -1,0 +1,841 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="jgs">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.06 [en] (Win98; U) [Netscape]">
+   <TITLE>ASCII Art FAQ- Jorn Barger</TITLE>
+</HEAD>
+<BODY TEXT="#FFFFFF" BGCOLOR="#000000" LINK="#8080FF" VLINK="#009900" ALINK="#CC33CC" BACKGROUND="nitegreen2.jpg" BGPROPERTIES="fixed">
+
+<CENTER><PRE><STYLE>
+<!--
+      A:link {text-decoration: none}
+      A:visited {text-decoration: none}
+      A:active {text-decoration: underline; color: #AC80FF}
+      A:hover {color: #A601FE; text-decoration: underline}
+-->
+</STYLE>
+<A NAME="top"></A><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<CENTER><B><I><FONT COLOR="#8080FF"><FONT SIZE=+2>FAQ (Frequently Asked
+Questions) by Jorn Barger</FONT></FONT></I></B></CENTER>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<CENTER><TABLE COLS=1 WIDTH="600" >
+<TR>
+<TD>
+<PRE><B><FONT COLOR="#FFFFFF">============================================================================
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ASCII ART FAQ&nbsp; by&nbsp; Jorn Barger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11 December 1993
+
+============================================================================
+
+
+ASCII ART FAQ
+by Jorn Barger
+
+<FONT SIZE=+1>Purpose:</FONT> to promote more creative use of the ASCII character set on
+Internet, especially for _page layout_ and _animation_, and the
+development and distribution of tools to facilitate this.
+
+<FONT SIZE=+1>Justification</FONT>: Ascii art will continue to be the appropriate,
+populist technology for graphics on Internet, for some years to
+come... so we might as well get good at it!&nbsp; (There's still lots of
+untapped potential...)
+
+There's such a range of newsreading environments, that few of the
+ideas offered here will work the same for everyone. If we want to do
+this right, we need to get a sense of where these differences are
+most serious.&nbsp; (White-on-black displays vs b-on-w, for one...)
+
+
+******************
+&nbsp;Contents of FAQ:
+******************
+
+- <A HREF="#layout">Samples of page-layoout and animation
+</A>- <A HREF="#characterset">The ASCII character set: problems and potential
+</A>- <A HREF="#linevsgrey">The line-draw character palette
+</A>- <A HREF="#fontsline">Line-draw ascii fonts
+</A>- <A HREF="#texture">Esthetics: texture, gesture
+</A>- <A HREF="#greyscale">Greyscale character palettes
+</A>- <A HREF="#antialias">ASCII anti-aliasing
+</A>- <A HREF="#algorhythm">An 'asciify' algorithm for anti-aliasing pbm bitmaps, with sample
+
+</A>This last topic may have the most *practical* utility-- it should
+allow archives of GIFs and JPEGs to offer compact catalogs of
+thumbnails *in the form of simple text files*.
+
+Thruout the faq, I'll be raising questions about things I don't
+know, that I'd like to be able to answer in future updates.
+Feedback is *very* welcome.
+
+
+<A NAME="layout"></A>Here's some samples of ascii page-layout:
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 9 9 3
+
+The central&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |"|
+bargraph shows >>>>>>>> |m| &lt;&nbsp;&nbsp;&nbsp; =---------
+the total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This rightmost bargraph,
+number of&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |"|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| &lt;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; turned sideways, shows
+newsgroups,&nbsp;&nbsp;&nbsp; | | &lt;&nbsp;&nbsp;&nbsp; |m| 2&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the *distribution* of daily
+log 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | 9&nbsp;&nbsp;&nbsp; |m| &lt;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; volume for all newsgroups.
+(groups_total) | | &lt;&nbsp;&nbsp;&nbsp; |m| 3&nbsp;&nbsp;&nbsp; ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (msgs_per_group)
+(~5000)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | &lt;&nbsp;&nbsp;&nbsp; |m| &lt;&nbsp;&nbsp;&nbsp; ]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| 6&nbsp;&nbsp;&nbsp; | | 4&nbsp;&nbsp;&nbsp; ]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Here, most newsgroups are
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; >>>>>&nbsp; |m| &lt;&nbsp;&nbsp;&nbsp; | | &lt;&nbsp;&nbsp;&nbsp; ]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; still way under 100 msgs
+This leftmost&nbsp; |m| &lt;&nbsp;&nbsp;&nbsp; | | 5&nbsp;&nbsp;&nbsp; ]]]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; per day.&nbsp; One group in ten
+bargraph is&nbsp;&nbsp;&nbsp; |m| 3&nbsp;&nbsp;&nbsp; | | &lt;&nbsp;&nbsp;&nbsp; ]]]]]]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tops this level.
+a logarithmic&nbsp; |m| &lt;&nbsp;&nbsp;&nbsp; | | 6&nbsp;&nbsp;&nbsp; =---------
+display of&nbsp;&nbsp;&nbsp;&nbsp; |m| &lt;&nbsp;&nbsp;&nbsp; |_|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp; 100&nbsp; 200
+total Usenet&nbsp;&nbsp; |m| 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msgs/day/group
+readership,&nbsp;&nbsp;&nbsp; |_|
+(subs_total)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5000 groups
+(~1,000,000)&nbsp; 1 million readers
+
+
+
+&nbsp;1 9 8 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 9 9 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 9 9 8: the nightmare?
+(wild guesses)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |"|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |"|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |"|
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| &lt;&nbsp; =---------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| &lt;&nbsp; =---------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| &lt; =---------
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| 1 ]
+|"|&nbsp;&nbsp; |m| &lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |"|&nbsp;&nbsp; |m| &lt;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |"|&nbsp;&nbsp; |m| &lt; ]]
+| | &lt; |m| 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | &lt; |m| 2&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | &lt; |m| 2 ]]
+| | 9 |m| &lt;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | 9 |m| &lt;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | 9 |m| &lt; ]]
+| | &lt; | | 3&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | &lt; |m| 3&nbsp; ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| &lt; |m| 3 ]]
+| | &lt; | | &lt;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | &lt; |m| &lt;&nbsp; ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| &lt; |m| &lt; ]]]
+| | 6 | | 4&nbsp; ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| 6 | | 4&nbsp; ]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| 6 |m| 4 ]]]]
+| | &lt; | | &lt;&nbsp; ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| &lt; | | &lt;&nbsp; ]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| &lt; |m| &lt; ]]]]]]
+|m| &lt; | | 5&nbsp; ]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| &lt; | | 5&nbsp; ]]]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| &lt; | | 5 ]]]]]]]]
+|m| 3 | | &lt;&nbsp; ]]]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| 3 | | &lt;&nbsp; ]]]]]]]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| 3 | | &lt; ]]]]]]]]]
+|m| &lt; | | 6&nbsp; =---------&nbsp;&nbsp; |m| &lt; | | 6&nbsp; =---------&nbsp;&nbsp; |m| &lt; | | 6 =---------
+|m| &lt; |_|&nbsp;&nbsp;&nbsp; 0&nbsp; 100&nbsp; 200&nbsp; |m| &lt; |_|&nbsp;&nbsp;&nbsp; 0&nbsp; 100&nbsp; 200&nbsp; |m| &lt; |_|&nbsp;&nbsp; 0&nbsp; 100&nbsp; 200
+|m| 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msgs/day/group |m| 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |m| 0
+|_|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |_|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |_|
+&nbsp;&nbsp;&nbsp;&nbsp; 500 groups&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5000 groups&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50,000 groups???
+100,000 readers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 million readers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100 million readers
+
+
+Current editors/ word processors assume that you want your text
+elements to hug the left margin, effectively a 'sideways gravity'
+that must be carefully counteracted.&nbsp; It's easy to screw up (which
+the warlorders call 'tabdamage').&nbsp; If your wp offers typeover-mode,
+that's likely to work better than insert-mode, for preventing
+tabdamage.
+
+Here's a primitive animation (that also illustrates the use of
+lineweight to simulate depth).&nbsp; The protagonist is just a circle
+with a heavy ascii lineweight, abstractly representing a character
+named Joy Hoy:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _+m"m+_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jp&nbsp;&nbsp;&nbsp;&nbsp; qh
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yb&nbsp;&nbsp;&nbsp;&nbsp; dY
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Y5m2Y"
+
+The faster your modem, the nicer this works:
+
+
+==========================================================================
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :: .. :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp; .::::.: ::
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; :. :':::::.::::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /-\_/-\_/-\_/-\_/-\_/-\_/-\_/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; :':'::.::::::.:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - .&nbsp;&nbsp; ,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; \- - :''::':':::&nbsp; ... _/&nbsp; |&nbsp; .&nbsp; .&nbsp;&nbsp; &lt;^o^o^^o^>&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; \- -::'::'::.::/&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; .&nbsp;&nbsp;&nbsp; &lt;^o^^o^^o^^o^>&nbsp;&nbsp;&nbsp;&nbsp; ,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : ..\:::':'::/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | . .&nbsp; &lt;^^^^^^^^^^^^^^> .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; : .. _ -=_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; ,&nbsp; H.:. /.../..:H&nbsp;&nbsp; .&nbsp;&nbsp; .
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; : ./&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | . . . I://.//./ /::I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; :/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | .&nbsp;&nbsp;&nbsp;&nbsp; H:.: /.//...:H ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp; / /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ \&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; :. I.:/.//.//..:I&nbsp; .:&nbsp;&nbsp; .
+&nbsp; _+m"m+_&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]/&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp; | .&nbsp; ,&nbsp; H:../// /./::H&nbsp; . ..
+&nbsp;Jp&nbsp;&nbsp;&nbsp;&nbsp; qh&nbsp;&nbsp;&nbsp; |&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp; \&nbsp; | ., .&nbsp; I./:/../// .:I&nbsp; ,&nbsp; . ,
+&nbsp;O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O ___|/&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp; \|____;__H:. ////:/./:H_________
+&nbsp;Yb&nbsp;&nbsp;&nbsp;&nbsp; dY
+&nbsp; "Y5m2Y"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /
+__________________&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __________
+&nbsp;&nbsp;&nbsp; _______"_____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =======_=======_===_===__________
+==========================================================================
+
+==========================================================================
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :: .. :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp; .::::.: ::
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; :. :':::::.::::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /-\_/-\_/-\_/-\_/-\_/-\_/-\_/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; :':'::.::::::.:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - .&nbsp;&nbsp; ,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; \- - :''::':':::&nbsp; ... _/&nbsp; |&nbsp; .&nbsp; .&nbsp;&nbsp; &lt;^o^o^^o^>&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; \- -::'::'::.::/&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; .&nbsp;&nbsp;&nbsp; &lt;^o^^o^^o^^o^>&nbsp;&nbsp;&nbsp;&nbsp; ,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : ..\:::':'::/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | . .&nbsp; &lt;^^^^^^^^^^^^^^> .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; : .. _ -=_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; ,&nbsp; H.:.//... ..:H&nbsp;&nbsp; .&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; : ./&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | . . . I://.//. //::I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; :/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | .&nbsp;&nbsp;&nbsp;&nbsp; H:.://.//...:H ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]&nbsp; / /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ \&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; :. I.:/./ .//..:I&nbsp; .:&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _+m"m+_ /&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp; | .&nbsp; ,&nbsp; H:../////./::H&nbsp; . ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jp&nbsp;&nbsp;&nbsp;&nbsp; qh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; J888888888888h&nbsp; | ., .&nbsp; I./:/../ //.:I&nbsp; ,&nbsp; . ,
+&nbsp;&nbsp; ______ O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O&nbsp; /&nbsp;&nbsp;&nbsp; 88 \\\&nbsp; \ \ \ 88 |____;__H:.// //:/./:H_________
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yb&nbsp;&nbsp;&nbsp;&nbsp; dY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88 \\\\\\ \\\ \ 88
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Y5m2Y"&nbsp; /&nbsp;&nbsp;&nbsp; 8 \\\\\\\\\\ \\&nbsp; 8
+&nbsp;_________________&nbsp; /&nbsp;&nbsp; J888888888888888888h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __________
+&nbsp;&nbsp;&nbsp; ______"______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8OO8XX [YBNNDY] XX8OO8 ==_======_====_===__________
+==========================================================================
+
+==========================================================================
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :: .. :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp; .::::.: ::
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; :. :':::::.::::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /-\_/-\_/-\_/-\_/-\_/-\_/-\_/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; :':'::.::::::.:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - .&nbsp;&nbsp; ,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; \- - :''::':':::&nbsp; ... _/&nbsp; |&nbsp; .&nbsp; .&nbsp;&nbsp; &lt;^o^o^^o^>&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; \- -::'::'::.::/&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; .&nbsp;&nbsp;&nbsp; &lt;^o^^o^^o^^o^>&nbsp;&nbsp;&nbsp;&nbsp; ,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : ..\:::':'::/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | . .&nbsp; &lt;^^^^^^^^^^^^^^> .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; : .. _ -=_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; ,&nbsp; H.:.//.../..:H&nbsp;&nbsp; .&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; : ./&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | . . . I: /.//.// ::I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; :/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [==] \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | .&nbsp;&nbsp;&nbsp;&nbsp; H:.://.//...:H ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp; / /&nbsp;&nbsp;&nbsp;&nbsp; [d==b]\ \&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; :. I.:/.//.//..:I&nbsp; .:&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]/&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "&nbsp; "&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp; | .&nbsp; ,&nbsp; H:.. ////./::H&nbsp; . ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _+m"m+_&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp; \&nbsp; | ., .&nbsp; I./:/..////.:I&nbsp; ,&nbsp; . ,
+&nbsp;&nbsp;&nbsp; __________|/&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; Jp&nbsp;&nbsp;&nbsp;&nbsp; qh&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp; \|____;__H:./ ///:/./:H_________
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp; Yb&nbsp;&nbsp;&nbsp;&nbsp; dY
+&nbsp;_________________&nbsp; /&nbsp;&nbsp;&nbsp; "Y5m2Y"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __________
+&nbsp;&nbsp;&nbsp; _______"_____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =======_=====_=====_===__________
+==========================================================================
+
+==========================================================================
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :: .. :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp; .::::.: ::
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; :. :':::::.::::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /-\_/-\_/-\_/-\_/-\_/-\_/-\_/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; :':'::.::::::.:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - .&nbsp;&nbsp; ,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; \- - :''::':':::&nbsp; ... _/&nbsp; |&nbsp; .&nbsp; .&nbsp;&nbsp; &lt;^o^o^^o^>&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; \- -::'::'::.::/&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; .&nbsp;&nbsp;&nbsp; &lt;^o^^o^^o^^o^>&nbsp;&nbsp;&nbsp;&nbsp; ,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : ..\:::':'::/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | . .&nbsp; &lt;^^^^^^^^^^^^^^> .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; : .. _ -=_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; ,&nbsp; H.:.//.../..:H&nbsp;&nbsp; .&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; : ./&nbsp;&nbsp;&nbsp; w&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | . . . I://. /.///::I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; :/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | .&nbsp;&nbsp;&nbsp;&nbsp; H:.://.//...:H ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp; / /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ \&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; :. I.:/.//./ ..:I&nbsp; .:&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]/&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp; ' .&nbsp; ,&nbsp; H:../ ///./::H&nbsp; . ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp; _+m"m+_ .&nbsp; I./:/..////.:I&nbsp; ,&nbsp; . ,
+&nbsp;&nbsp;&nbsp; __________|/&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jp&nbsp;&nbsp;&nbsp;&nbsp; qh __H:./// /:/./:H_________
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yb&nbsp;&nbsp;&nbsp;&nbsp; dY
+&nbsp;_________________&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Y5m2Y"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __________
+&nbsp;&nbsp;&nbsp; _______"_____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ___===_====_======_===__________
+==========================================================================
+
+==========================================================================
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :: .. :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp; .::::.: ::
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; :. :':::::.::::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /-\_/-\_/-\_/-\_/-\_/-\_/-\_/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; :':'::.::::::.:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - .&nbsp;&nbsp; ,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; \- - :''::':':::&nbsp; ... _/&nbsp; |&nbsp; .&nbsp; .&nbsp;&nbsp; &lt;^o^o^^o^>&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; \- -::'::'::.::/&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; .&nbsp;&nbsp;&nbsp; &lt;^o^^o^^o^^o^>&nbsp;&nbsp;&nbsp;&nbsp; ,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : ..\:::':'::/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | . .&nbsp; &lt;^^^^^^^^^^^^^^> .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; : .. _ -=_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; ,&nbsp; H.:.//.../..:H&nbsp;&nbsp; .&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; : ./&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | . . . I:/ .//.// ::I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; :/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | .&nbsp;&nbsp;&nbsp;&nbsp; H:.://.//...:H ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp; / /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ \&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; :. I.:/.//.//.. !&nbsp; .:&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]/&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp; | .&nbsp; ,&nbsp; H:..///&nbsp; _+m"m+_ . .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp; \&nbsp; | ., .&nbsp; I./:/.. Jp&nbsp;&nbsp;&nbsp;&nbsp; qh&nbsp; . ,
+&nbsp;&nbsp;&nbsp; __________|/&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp; \|____;__H:./ // O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O&nbsp; ____
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yb&nbsp;&nbsp;&nbsp;&nbsp; dY
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Y5m2Y"
+&nbsp;_________________&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __________
+&nbsp;&nbsp;&nbsp; _______"_____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =======_===_=======_===__________
+==========================================================================
+
+
+
+*************************
+<A NAME="characterset"></A> The ASCII character set
+*************************
+
+The American Standard Code for Information Interchange supplies a
+character-assignment for each number from zero to 127 (7F in
+hexadecimal).&nbsp; As I understand it, Internet protocols are optimized
+for this seven-bit range--if you're trying to ftp an eight-bit-wide
+file, you have to specially request 'binary' transmission.&nbsp; (So the
+opposite of binary, here, is *ASCII*.)
+
+Only the numbers from 32 to 126 (20 to 7E hex) are defined as
+*printable* characters (the others are defined as control codes):
+
+&nbsp;&nbsp;&nbsp; 0 1 2 3 4 5 6 7 8 9 A B C D E F
+&nbsp; =--------------------------------
+2 |&nbsp;&nbsp; ! " # $ % &amp; ' ( ) * + , - . /&nbsp; &lt;- &lt;- &lt;- 20 hex is the
+3 | 0 1 2 3 4 5 6 7 8 9 : ; &lt; = > ?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; blankspace
+4 | @ A B C D E F G H I J K L M N O
+5 | P Q R S T U V W X Y Z [ \ ] ^ _
+6 | ` a b c d e f g h i j k l m n o&nbsp;&nbsp;&nbsp;&nbsp; 7F is non-printing
+7 | p q r s t u v w x y z { | } ~&nbsp;&nbsp; &lt;-&nbsp; in the US ("rubout")
+
+Unfortunately, this narrow standard ignored the needs of many other
+cultures: the British 'pound' sign, letters with accents in French
+and Scandinavian alphabets, etc., which led them to introduce slight
+modifications to the standard, making the following symbols (at
+least) non-universal:
+
+&nbsp;&nbsp; {^ `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { curly brace 1&nbsp;&nbsp; ^ caret&nbsp; ` backquote
+&nbsp;&nbsp;&nbsp; #| }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # hatch/hash mark&nbsp;&nbsp; | pipe&nbsp; } curly brace 2
+&nbsp;&nbsp;&nbsp;&nbsp; ~\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~ tilde&nbsp;&nbsp;&nbsp; \ backslash
+&nbsp;&nbsp;&nbsp; ]$[@&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [square brackets]&nbsp; $ dollarsign&nbsp;&nbsp; @ at-sign
+
+[The test-graphic is vaguely a woman with a rose in her teeth, on my
+screen anyway...]
+
+Furthermore, even within the US, different typefaces assign
+significantly different shapes to some characters, for example:
+
+"|" (C7)&nbsp; is sometimes drawn as a continuous line, sometimes broken
+in the middle.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...@...&nbsp;&nbsp;&nbsp;&nbsp; ...@...&nbsp;&nbsp; (So this becomes a
+"^" (5E) may be anything from ..@.@..&nbsp; to ..@.@..&nbsp;&nbsp; 'Pinocchio' smiley:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .......&nbsp;&nbsp;&nbsp;&nbsp; .@...@.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { ;^)
+Similarly with "&lt;" and ">".&nbsp;&nbsp; .......&nbsp;&nbsp;&nbsp;&nbsp; @.....@&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (...doesn't it?))
+
+Depending on your character set, any of these may be the blackest
+black: @#%* (I'm often seeing people choosing "#", which on my
+screen looks totally blotchy.)
+
+Any of these may display at different heights: ~^*-=+
+
+Lettershapes may have serifs or not, and ascenders and descenders
+may be straight or curved. (Proportionally-spaced fonts, as opposed
+to monospaced, are of course *hopeless*.&nbsp; On the Mac, I favor Monaco
+9, for its simplicity.&nbsp; Courier is another normally-monospaced
+family.)
+
+Even monospaced fonts may display with different aspect ratios
+(v:h), at least within GUIs, which can turn circles into ellipses
+and squares into rectangles.&nbsp; Different newsreaders may space the
+lines differently, too, with the same outcome. (What was the IBM-
+monochrome aspect-ratio?)
+
+For Internet transmission, you can assume the display is 80
+characters wide, although if you trim this a bit it will allow
+images to be e-quoted without wrap-around. (If you use all 80, can
+the CR cause wraparound in some pagers?)
+
+Normal screen height is 24 or 25 lines, but when you're laying out a
+page you should assume you'll use a control-L before and after each
+screenful of text, to maintain the alignment, and this turns out to
+limit the height to 22 lines.
+
+
+
+*********************************************
+&nbsp;<A NAME="linevsgrey"></A>Line-draw vs. greyscale character palettes
+*********************************************
+
+Most ascii art so far has leaned almost entirely on less than twenty
+of the available characters-- what might be called the 'line-draw'
+character palette:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / \ | - _ =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; . : ' ` " ~
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt; > ( ) [ ]
+
+Here's a cute example of the potential of this palette, a pastiche
+that re-combines an incredibly cool self-portrait by Jonggu Moon and
+a state-of-the-art dragon (off rec.games.mud, I think, but I got it
+2ndhand and missed the credit).&nbsp; Notice, though, how the lines are
+mostly the same weight, creating a flatness:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _&nbsp;&nbsp; __,----'~~~~~~~~~`-----.__
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp; .&nbsp;&nbsp;&nbsp; `//====-_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ___,-' `
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \_|// .&nbsp;&nbsp; /||\\&nbsp; `~~~~`---.___./
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ______-==.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _-~o~&nbsp; \/&nbsp;&nbsp;&nbsp; |||&nbsp; \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,'`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __,--'&nbsp;&nbsp; ,=='||\=_&nbsp;&nbsp;&nbsp; ;_--~/_-'|-&nbsp;&nbsp; |`\&nbsp;&nbsp; \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,'
+&nbsp;&nbsp;&nbsp; _-'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '&nbsp;&nbsp;&nbsp; |&nbsp; \\`.&nbsp;&nbsp; '-'~7&nbsp; /-&nbsp;&nbsp; /&nbsp; ||&nbsp;&nbsp; `\.&nbsp;&nbsp;&nbsp;&nbsp; /
+&nbsp; .'&nbsp;&nbsp;&nbsp; //// ||&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; \\ \_&nbsp;&nbsp;&nbsp; /&nbsp; /-&nbsp;&nbsp; /&nbsp;&nbsp; ||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp; /
+&nbsp;/ ____&nbsp; O-O--=&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp; \\.`-_/&nbsp; /|- _/&nbsp;&nbsp; ,||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ /
+,-'&nbsp;&nbsp;&nbsp;&nbsp; ( ^ _/\_ --_ \&nbsp;&nbsp;&nbsp;&nbsp; `==-/&nbsp; `| \'--===-'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /\~-\/&nbsp; \&nbsp;&nbsp; `-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /|&nbsp;&nbsp;&nbsp; )-'\~'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,--~'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /|`/ _ \_ \&nbsp;&nbsp;&nbsp; '-~~\_/ |&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; `\_&nbsp;&nbsp; ,~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / | : U_/&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp; \__&nbsp;&nbsp; \/~&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `\__
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \(__:__ \_/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,-' _/'\ ,-'~____-'`-/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ``===\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =@=====&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ((->/'&nbsp;&nbsp;&nbsp; \|||' `.&nbsp;&nbsp;&nbsp;&nbsp; ~`-/ ,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _||
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \_&nbsp;&nbsp;&nbsp;&nbsp; ~\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `^---|__i__i__\--~'_/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp; |&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __-^-_&nbsp;&nbsp;&nbsp; `)&nbsp; \-.______________,-~'
+&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp; /|&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //,-'~~`__--^-&nbsp; |-------~~~~~'
+&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; | |&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //,--~~`-\
+&nbsp;&nbsp;&nbsp;&nbsp; |__| |__|
+&nbsp;&nbsp;&nbsp;&nbsp; /#_)&nbsp; |#\
+
+
+Tools for pasting clip-art *with appropriate 'hidden-line removal'*
+do not exist, so one must settle, for now, for a word processor with
+rectangular cut and paste. (Nisus on the Mac, MS Word in recent
+upgrades?)
+
+The animation sample at the beginning of this FAQ uses mostly
+linedraw, but also a bit of greyscale in the foreground (darker
+lineweight) and in the far-background (lighter weight).&nbsp; *Greyscale
+ascii art normally assumes you're displaying dark letters on a light
+background*.&nbsp; This won't be true for many pc-monochrome monitors.
+
+(Here's a page, again.&nbsp; Notice also how a degree of 'random noise'
+adds to the sense of realism, like avoiding using too-straight lines
+or too-symmetrical shapes.)
+
+
+==========================================================================
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :: .. :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp; .::::.: ::
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; :. :':::::.::::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /-\_/-\_/-\_/-\_/-\_/-\_/-\_/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; :':'::.::::::.:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - .&nbsp;&nbsp; ,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; \- - :''::':':::&nbsp; ... _/&nbsp; |&nbsp; .&nbsp; .&nbsp;&nbsp; &lt;^o^o^^o^>&nbsp;&nbsp; .&nbsp;&nbsp;&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; \- -::'::'::.::/&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp; .&nbsp;&nbsp;&nbsp; &lt;^o^^o^^o^^o^>&nbsp;&nbsp;&nbsp;&nbsp; ,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : ..\:::':'::/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | . .&nbsp; &lt;^^^^^^^^^^^^^^> .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; : .. _ -=_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; ,&nbsp; H.:.//... ..:H&nbsp;&nbsp; .&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; : ./&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | . . . I://.//. //::I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; ]&nbsp;&nbsp; :/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | .&nbsp;&nbsp;&nbsp;&nbsp; H:.://.//...:H ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]&nbsp; / /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ \&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; :. I.:/./ .//..:I&nbsp; .:&nbsp;&nbsp; .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _+m"m+_ /&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp;&nbsp; | .&nbsp; ,&nbsp; H:../////./::H&nbsp; . ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jp&nbsp;&nbsp;&nbsp;&nbsp; qh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; J888888888888h&nbsp; | ., .&nbsp; I./:/../ //.:I&nbsp; ,&nbsp; . ,
+&nbsp;&nbsp; ______ O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O&nbsp; /&nbsp;&nbsp;&nbsp; 88 \\\&nbsp; \ \ \ 88 |____;__H:.// //:/./:H_________
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yb&nbsp;&nbsp;&nbsp;&nbsp; dY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88 \\\\\\ \\\ \ 88
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "Y5m2Y"&nbsp; /&nbsp;&nbsp;&nbsp; 8 \\\\\\\\\\ \\&nbsp; 8
+&nbsp;_________________&nbsp; /&nbsp;&nbsp; J888888888888888888h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __________
+&nbsp;&nbsp;&nbsp; ______"______&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8OO8XX [YBNNDY] XX8OO8 ==_======_====_===__________
+==========================================================================
+
+
+
+************************
+&nbsp;<A NAME="fontsline"></A>ASCII fonts (linedraw)
+************************
+
+Here's some ascii fonts that use only the linedraw palette.&nbsp; (I'd
+like to collect full alphabets for these.)&nbsp; Notice that they all use
+the underscore for the topline of the letters, so an almost-full
+line of blank must be left above them:
+&nbsp;___&nbsp; _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _&nbsp; _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _____
+|&nbsp;&nbsp; || |_&nbsp; ___&nbsp; _| ||_| ___&nbsp; __&nbsp; _| |_&nbsp;&nbsp;&nbsp; /&nbsp; ___\&nbsp; ___&nbsp; __ ___&nbsp;&nbsp; ___
+| | ||&nbsp; .\/ ._\/.&nbsp; || |/ ._\|&nbsp; \|_&nbsp;&nbsp; _|&nbsp;&nbsp; | / __&nbsp; / _ \ | /&nbsp;&nbsp; \ / _ \
+|___||___/\___/\___||_|\___/|_|_| |_|&nbsp;&nbsp;&nbsp;&nbsp; | \_\ \ | __/ |&nbsp; /\ | | __/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \_____/ \___/ |_| |_| \___/
+&nbsp;_&nbsp; __&nbsp; __&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __&nbsp; _&nbsp;&nbsp;&nbsp;&nbsp; __&nbsp;&nbsp; ___&nbsp; __&nbsp; __&nbsp; ___&nbsp; _&nbsp; _
+| |/ / / _|&nbsp;&nbsp;&nbsp; / _|| |&nbsp;&nbsp; /&nbsp; \ | __|/ _|/ _|| __|| \| |
+|&nbsp;&nbsp; ( ( (_&nbsp;&nbsp;&nbsp; ( (_ | |_ | __ || __|\_ \\_ \| __||&nbsp;&nbsp;&nbsp; |
+|_|\_\ \__| [] \__||___||_||_||___||__/|__/|___||_|\_|
+&nbsp; ___&nbsp; __ __&nbsp; ___&nbsp; ____&nbsp;&nbsp; ___&nbsp;&nbsp;&nbsp; ____ _____&nbsp; ___&nbsp; _____&nbsp; ___&nbsp; ____
+&nbsp;/&nbsp;&nbsp; \|&nbsp; |&nbsp; |/&nbsp;&nbsp; \|&nbsp;&nbsp;&nbsp; \ /&nbsp;&nbsp; \&nbsp; / ___|&nbsp; ___|/&nbsp;&nbsp; \|_&nbsp;&nbsp; _|/&nbsp;&nbsp; \|&nbsp;&nbsp;&nbsp; |
+| =+= | =+= | =+= | =+= | =+= | \__ \|&nbsp; ___| +=+ | | | | +=+ | +=+
+&nbsp;\___/|__|__|__|__|__|\_\__|__| |___/|_____|__|__| |_| |__|__|____|
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /\
+&nbsp; ___/\___&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ___&nbsp;&nbsp; __&nbsp; __(__) __&nbsp; _______
+_/&nbsp; __/\&nbsp; \/\&nbsp; /&nbsp;&nbsp; \ |&nbsp; |/&nbsp; ___\/&nbsp; \/&nbsp;&nbsp; ___/
+\___ \_/&nbsp;&nbsp;&nbsp;&nbsp; \/ _/\ \| _/&nbsp; /|&nbsp; |&nbsp;&nbsp;&nbsp; \&nbsp; / ____
+_/&nbsp; | \&nbsp;&nbsp; \/&nbsp; \ \_/&nbsp; / \_&nbsp; \|&nbsp; |&nbsp; |&nbsp; \ \/&nbsp; _/
+\&nbsp; ___/\__||&nbsp;&nbsp; \____/|&nbsp; |\__/__|__|&nbsp;&nbsp; \_&nbsp;&nbsp; |
+&nbsp;\/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |____/&nbsp;&nbsp;&nbsp; |__|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |____/|__| /\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ___&nbsp;&nbsp;&nbsp;&nbsp; (__)_____________&nbsp; ___________
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp; \/\&nbsp; |&nbsp; |____&nbsp; \____&nbsp; \/&nbsp;&nbsp; \_____&nbsp; \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp; \ |&nbsp; | _|/&nbsp; / _|/&nbsp; / _/\ \__|/&nbsp; /
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \&nbsp;&nbsp; \/&nbsp; \|&nbsp; | \_&nbsp;&nbsp; \_\_&nbsp;&nbsp; \_\_/&nbsp; /\_&nbsp;&nbsp; \_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \__||&nbsp;&nbsp; |__|&nbsp; |\___/ |\___/____/&nbsp; |\___/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |____/ |__|&nbsp;&nbsp; |__|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |__|
+
+Here's an especially readable box font (in tumbling-dice mode):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __&nbsp;&nbsp;&nbsp;&nbsp; ____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __&nbsp;&nbsp; ____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __&nbsp;&nbsp; __
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /\ \&nbsp;&nbsp; /&nbsp; \_\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / /\ /&nbsp; \ \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / |\ / /\
+&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; \_\ / /\ |_|&nbsp;&nbsp;&nbsp;&nbsp; / / /| /\ \ \&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp; ||/ / /
+&nbsp;&nbsp;&nbsp; / /\ | |\ \/ /_/_&nbsp;&nbsp; / / / \ \/&nbsp; \ \&nbsp;&nbsp; /&nbsp;&nbsp; |/ / /
+&nbsp;&nbsp; /&nbsp; \/ |_| \&nbsp; __ \_\ /_/ /&nbsp;&nbsp; \&nbsp; /\ \_\ / /|&nbsp;&nbsp; / /
+&nbsp; / /\ ./_/&nbsp;&nbsp; \ \ \/_/_\_\/&nbsp;&nbsp;&nbsp;&nbsp; \ \ \/_// / |&nbsp; / /
+&nbsp; \ \/ |_|&nbsp;&nbsp;&nbsp;&nbsp; \ \_\ /_/\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \ \_\ /_/ /|_/ /
+&nbsp;&nbsp; \__/_/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \/_/ \_\/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \/_/ \_\/ \_\/
+
+And an impressively tiny one:
+&nbsp; ________&nbsp;&nbsp;&nbsp; ________
+&nbsp;/ /_&nbsp; __/\&nbsp; /\ \__&nbsp; _\
+/___/_/_/\/&nbsp; \ \___\_\_\
+\___\_\_\/&nbsp;&nbsp;&nbsp; \/___/_/_/
+
+Warlorders call most ascii fonts "BUAFs", for butt-ugly ascii font.
+(buaG substitutes G-for-graphic.)&nbsp; I'm on the lookout for fonts that
+might pass for butt-beautiful, and I'll settle for butt-bearable...
+:^)&nbsp; Here's my new favorite (anybody know Jules?):
+
+&nbsp;&nbsp;&nbsp;&nbsp; _|&nbsp; _|&nbsp; _|&nbsp; _|&nbsp;&nbsp;&nbsp;&nbsp; _|_|_&nbsp;&nbsp; _|_|_
+&nbsp;&nbsp;&nbsp;&nbsp; _|&nbsp; _|&nbsp; _|&nbsp; _|&nbsp;&nbsp;&nbsp;&nbsp; _| |/&nbsp;&nbsp; \|_
+&nbsp;_|&nbsp; _|&nbsp; _|&nbsp; _|&nbsp; _|&nbsp;&nbsp;&nbsp;&nbsp; _|/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \|
+&nbsp;\|_|_/&nbsp; \|_|_/&nbsp; _|_|_| \|_|_|&nbsp; \|_|_/
+
+For page-layout, the linedraw palette is useful for making boxes and
+frames, which adds to a screen's 'page-appeal' in the same way a
+picture-frame sharpens the look of a wall-poster.
+
+
+
+*********************
+&nbsp;<A NAME="texture"></A>Texture and gesture
+*********************
+
+I experienced a personal ascii-art epiphany last winter, on seeing a
+few signatures where people used this: _/ as a tile, which provides
+an amazing sense of *texture*:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp; _/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp; _/&nbsp; _/
+
+
+Another (flatter) sort of
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; texture:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The same, randomized:
+
+&nbsp;&nbsp;&nbsp; *::*::*::*::*::*::*::*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::*:::::***:::::::::::
+&nbsp;&nbsp;&nbsp; *::*::*::*::*::*::*::*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :::::::**::::::*::::*:
+&nbsp;&nbsp;&nbsp; *::*::*::*::*::*::*::*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :*::*:*::*::::*::::*::
+&nbsp;&nbsp;&nbsp; *::*::*::*::*::*::*::*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :::*::::::*::*:*::::::
+&nbsp;&nbsp;&nbsp; *::*::*::*::*::*::*::*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::*:*::::*:*::::::::::
+&nbsp;&nbsp;&nbsp; *::*::*::*::*::*::*::*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::::::*:*::::*::::::::
+&nbsp;&nbsp;&nbsp; *::*::*::*::*::*::*::*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *::::::::**:::::::::**
+&nbsp;&nbsp;&nbsp; *::*::*::*::*::*::*::*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::::*::::::*:::::*::::
+
+If your wp's macro-language includes a random-number function, you
+can generate textures by writing a 'Spatter' macro that fills a
+rectangle with the letters of any string, randomly scattered.
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/ _/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp; _/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/ _/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/ _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/_/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp; _/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp; _/
+As far as I know,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp; _/
+the first appli-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp; _/ _/ _/&nbsp;&nbsp;&nbsp;&nbsp; _/ _/&nbsp;&nbsp; _/
+cation to allow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/ _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/ _/_/_/&nbsp;&nbsp;&nbsp; _/
+the use of a mouse&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/
+to draw ascii&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/_/ _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/
+*gesturally* will&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp; _/_/
+be Matt Mora's&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/&nbsp; _/
+AsciiPaint (for Mac), _/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/
+now in beta. (Watch&nbsp;&nbsp;&nbsp; _/
+for announcements.)&nbsp;&nbsp;&nbsp; _/_/
+It made this easy:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _/ _/ _/
+
+
+
+
+*****************
+&nbsp;<A NAME="greyscale"></A>ASCII greyscale
+*****************
+
+ASCII art has its roots in the technology of *mosaics*.&nbsp; Most
+mosaics use small elements with a single, solid colorshade.&nbsp; By this
+standard, ASCII offers 95 shades of grey!&nbsp; (When I was small, a
+design firm in my town built a hi-tech mosaic mural for the Wright
+Brothers museum in Dayton, Ohio, a wall-sized version of that
+classic b&amp;w photo of their first flight, built out of inch-square
+tiles in about eight shades of grey-- only instead of solid greys,
+they used (fractally) tiny black-and-white 'icons', which
+represented other scenes from the Wrights' career, covering a scale
+from very light to very dark...)
+
+Here's an approximate, partial greyscale ascii palette (still
+assuming white background):
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .'`,^:";~
+&nbsp;&nbsp;&nbsp;&nbsp; -_+&lt;>i!lI?
+&nbsp;&nbsp;&nbsp;&nbsp; /\|()1{}[]&nbsp;&nbsp; (I'm looking for feedback about where this doesn't work,
+&nbsp;&nbsp;&nbsp;&nbsp; rcvunxzjft&nbsp;&nbsp; for non-Mac-Monaco displays.)
+&nbsp;&nbsp;&nbsp;&nbsp; LCJUYXZO0Q
+&nbsp;&nbsp;&nbsp;&nbsp; oahkbdpqwm
+&nbsp;&nbsp;&nbsp;&nbsp; *WMB8&amp;%$#@
+
+(If an eighth bit were available to toggle the background color
+between black and white... would this help a lot?)
+
+Of course, more than eight shades of grey is probably overkill, not
+least because the lettershapes contribute so much distracting
+'noise' that fewer is probably better.
+
+@@@@@@@@@@@@@@@@@@@@J............@@@@@@JJJJJJ@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@J.................@@JJJJ@@@@JJ@@@@
+@@@@@@..@@@@@@@@@@@@@JJJ...........@@@@@@@@@@@@@@JJ@@@@
+@@@@@@J.JJJJ@@@J@@@@@@@@J........@@.JJJ..@@@@JJJ.JJJJ@@&nbsp; The more you
+@@@@..JJ....@@JJ@@@@@@@@J........@@.J..JJ@@@@@@J...JJ@@&nbsp; squint, the better
+@@@@JJ....J.J.....J.@@@@...........JJJ.JJ..........JJ@@&nbsp; this looks!
+@@@@JJ....J.J.....J.@@@@............JJJ............JJ@@&nbsp; Notice that it
+@@JJJJ..J..........J@@@@...............JJJJ........JJ@@&nbsp; uses only three
+@@JJJJ..J..........J@@@@..................J........JJ@@&nbsp; greys (or a
+@@JJJ..............J@@@@J..........................JJ@@&nbsp; 'black', a white
+@@JJJ.............JJ@@@@J..........................JJ@@&nbsp; and one grey.)
+@@JJJJ.........J.J@@@@J...........................JJJ@@
+@@JJJJJ.......J.JJ@@@@J...........................JJJ@@&nbsp; [This example is
+@@JJJJJ.......J.@@JJ@@....J........................@@@@&nbsp; far from being
+@@JJJJJ.......JJ@@JJ@@..JJJ........................@@@@&nbsp; optimized, even at
+@@JJJJJ.........JJ@@..............................J@@@@&nbsp; this low res...]
+@@JJJJJJ...J.JJJJJ@@.............................JJ@@@@
+@@@@@JJJJJJJ@@JJJJ@@@JJJ@@@JJJ..................J@@@@@@&nbsp; (Aren't the J's
+@@@@@@JJJJJJ@@@@@@@@@@@@@@@@@@@@@@@JJJJJ.J.....JJ@@@@@@&nbsp; annoying?)
+@@@@@@@@JJJJJJJJ.J@@@@@@@@@@@JJJ...............@@@@@@@@
+@@@@@@@@JJJJJJJJJ.JJ@@@@@@@@J................@@@@@@@@@@
+@@@@@@@@@@JJJJ.J.JJ........................@@@@@@@@@@@@
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ....................J@@@@@@@@@@@@@......JJJJJJ..........
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .....................J@@@@@@@@@@@@@@@@@@..JJJJ....JJ....
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ......@@.............JJJ@@@@@@@@@@@@..............JJ....
+Here's the&nbsp;&nbsp;&nbsp;&nbsp; ......J@JJJJ...J........J@@@@@@@@@..@JJJ@@....JJJ@JJJJ..
+same image&nbsp;&nbsp;&nbsp;&nbsp; ....@@JJ@@@@..JJ........J@@@@@@@@@..@J@@JJ......J@@@JJ..
+in negative,&nbsp;&nbsp; ....JJ@@@@J@J@@@@@J@....@@@@@@@@@@@@JJJ@JJ@@@@@@@@@@JJ..
+for pc-monos:&nbsp; ....JJ@@@@J@J@@@@@J@....@@@@@@@@@@@@@JJJ@@@@@@@@@@@@JJ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ..JJJJ@@J@@@@@@@@@@J....@@@@@@@@@@@@@@@@JJJJ@@@@@@@@JJ..
+(The whites&nbsp;&nbsp;&nbsp; ..JJJJ@@J@@@@@@@@@@J....@@@@@@@@@@@@@@@@@@@J@@@@@@@@JJ..
+just aren't&nbsp;&nbsp;&nbsp; ..JJJ@@@@@@@@@@@@@@J....J@@@@@@@@@@@@@@@@@@@@@@@@@@@JJ..
+very white!)&nbsp;&nbsp; ..JJJ@@@@@@@@@@@@@JJ....J@@@@@@@@@@@@@@@@@@@@@@@@@@@JJ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ..JJJJ@@@@@@@@@J@J....J@@@@@@@@@@@@@@@@@@@@@@@@@@@@JJJ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ..JJJJJ@@@@@@@J@JJ....J@@@@@@@@@@@@@@@@@@@@@@@@@@@@JJJ..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ..JJJJJ@@@@@@@J@..JJ..@@@@J@@@@@@@@@@@@@@@@@@@@@@@@@....
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ..JJJJJ@@@@@@@JJ..JJ..@@JJJ@@@@@@@@@@@@@@@@@@@@@@@@@....
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ..JJJJJ@@@@@@@@@JJ..@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@J....
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ..JJJJJJ@@@J@JJJJJ..@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@JJ....
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .....JJJJJJJ..JJJJ...JJJ...JJJ@@@@@@@@@@@@@@@@@@@J......
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ......JJJJJJ.......................JJJJJ@J@@@@@@JJ......
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ........JJJJJJJJ@J...........JJJ@@@@@@@@@@@@@@@@........
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ........JJJJJJJJJ@JJ........J@@@@@@@@@@@@@@@@@..........
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ..........JJJJ@J@JJ@@@@@@@@@@@@@@@@@@@@@@@@@............
+
+
+
+*********************
+&nbsp;<A NAME="antialias"></A>ASCII anti-aliasing
+*********************
+
+The oddities of the ascii lettershapes, though, need not be purely
+noise.&nbsp; One can also view ascii as a palette whose elements combine
+both linedraw and greyscale effects.&nbsp; This might be thought of as
+anti-aliased greyscale, and ought to allow at least doubled
+resolution, both horizontally and vertically.&nbsp; (I wonder how this
+works on other screens?):
+
+
+(((&amp;(&amp;(&amp;(&amp;(&amp;(((&amp;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@(((((((((((((((((((((((@
+((&amp;(((&amp;((&amp;(&amp;((@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;(((((((((((((((((((((@
+(&amp;(&amp;((&amp;(&amp;&amp;((@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;((((((((((((((((((@
+((&amp;(&amp;(@&amp;@&amp;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;&amp;(((((((((((((((@
+&amp;(((&amp;&amp;&amp;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@(((((((((((((((@
+(&amp;(&amp;(@@@&amp;&amp;@@@@@@@@@@@@@@@@@@@@@@5::""=@@@@@@@@@@@@@@@@@@@@&amp;((((((((((((((@
+((&amp;(&amp;&amp;@@@@@@@@@@@@@@@@@@@@@@@@:::::::m88CCC8@@@@@@@@@@@@@@@@@&amp;(((((((((((@
+(&amp;(&amp;@@@@@@@@@@@@@@@@@@@#88@@88b_::::::mm@9998C8@@@@@@@@@@@@@@@@((((((((((@
+((@&amp;@@@@@@@@@@@@@@@@@@#L""#58@@@)::..8&lt;"_@@9>"C@@@@@@@@@@@@@@@@@@&amp;(((((((@
+(@@@@@@@@@@@@@@@@@@@@@3::))::)@@:::&nbsp; :Yh":::::C@@@@@@@@@@@@@@@@@@@@@m(((((
+@@@@@@@@@@@@@@@@@@@@@33:)::::(@@:::.&nbsp;&nbsp; :"?::::C@@@@@@@@@@@@@@@@@@(@((K((((
+@@@@@@@@@@@@@@@@@@@@@3)::::::d@@|::.&nbsp;&nbsp;&nbsp; ..::::C@@@@@@@@@@@@@@@@@@(@((@(((@
+@@@@@@@@@@@@@@@@@@@@@3J)::::/J@@|::..&nbsp;&nbsp; ..:::(C@@@@@@@@@@@@@@@@@@@((@@&amp;((@
+@@@@@@@@@@@@@@@@@@@@@3J)::::6@C8:=)..&nbsp;&nbsp; .:::::@@@@@@@@@@@@@@@@@@@@@@&amp;((((@
+@@@@@@@@@@@@@@@@@@@@@33J):;;cO8::::.... :::::_@@@@@@@@@@@@@@@@@@@@@@&amp;((((@
+@@@@@@@@@@@@@@@@@@@@@@833O8mm@@m888mme_=;:::_@@@@@@@@@@@@@@@@@@@@@@@&amp;@(((@
+@@@@@@@@@@@@@@@@@@@@@@88OOOO:@@@88P":::::::w@@@@@@@@@@@@@@@@@@@@@(@@@(@((@
+@@@@@@@@@@@@@@@@@@@@@@@88OOJJ):::::::::::_@@@@@@@@@@@@@@@@@@@@@@@(@@@(&amp;((@
+@@@@@@@@@@@@@@@@@@@@@@&amp;&amp;88888):::::__wm@@@@@@@@@@@@@@@@@@@@@@@@@@@(@@@@((@
+@@@@@@@@@@@@@@@@@@@@@@&amp;&amp;88888 @@@@@&amp;&amp;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@(@@@&amp;((@
+@@@@@@@@@@@@@@@@@@@@@&amp;8@888883 888888@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;@
+@@@@@@@@@@@@@@@@@@@&amp;@&amp;8&amp;8888833 88888&amp;@@&amp;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;@@
+
+|@@@@@@@^^~~~~~~~~~~~~~~~~~~~~^^@@@@@@@@|
+|@@@@@@^&nbsp;&nbsp;&nbsp;&nbsp; ~^&nbsp; @&nbsp; @@ @ @ @ I&nbsp; ~^@@@@@@|
+|@@@@@&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ~ ~~ ~I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @@@@@|&nbsp;&nbsp; Here's a superb white-on-black
+|@@@@'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '&nbsp; _,w@&lt;&nbsp;&nbsp;&nbsp; @@@@|&nbsp;&nbsp; anti-aliased image I just got
+|@@@@&nbsp;&nbsp;&nbsp;&nbsp; @@@@@@@@w___,w@@@@@@@@&nbsp; @&nbsp; @@@|&nbsp;&nbsp; in the mail.
+|@@@@&nbsp;&nbsp;&nbsp;&nbsp; @@@@@@@@@@@@@@@@@@@@@@&nbsp; I&nbsp; @@@|
+|@@@@&nbsp;&nbsp;&nbsp;&nbsp; @@@@@@@@@@@@@@@@@@@@*@[ i&nbsp; @@@|
+|@@@@&nbsp;&nbsp;&nbsp;&nbsp; @@@@@@@@@@@@@@@@@@@@[][ | ]@@@|
+|@@@@&nbsp;&nbsp;&nbsp;&nbsp; ~_,,_ ~@@@@@@@~ ____~ @&nbsp;&nbsp;&nbsp; @@@|
+|@@@@&nbsp;&nbsp;&nbsp; _~ ,&nbsp; ,&nbsp; `@@@~&nbsp; _&nbsp; _`@ ]L&nbsp; J@@@|
+|@@@@&nbsp; , @@w@ww+&nbsp;&nbsp; @@@ww``,,@w@ ][&nbsp; @@@@|
+|@@@@,&nbsp; @@@@www@@@ @@@@@@@ww@@@@@[&nbsp; @@@@|
+|@@@@@_|| @@@@@@P' @@P@@@@@@@@@@@[|c@@@@|
+|@@@@@@w| '@@P~&nbsp; P]@@@-~, ~Y@@^'],@@@@@@|
+|@@@@@@@[&nbsp;&nbsp; _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _J@@Tk&nbsp;&nbsp;&nbsp;&nbsp; ]]@@@@@@|
+|@@@@@@@@,@ @@, c,,,,,,,y ,w@@[ ,@@@@@@@|
+|@@@@@@@@@ i @w&nbsp;&nbsp; ====--_@@@@@&nbsp; @@@@@@@@|
+|@@@@@@@@@@`,P~ _ ~^^^^Y@@@@@&nbsp; @@@@@@@@@|
+|@@@@^^=^@@^&nbsp;&nbsp; ^' ,ww,w@@@@@ _@@@@@@@@@@|
+|@@@_xJ~ ~&nbsp;&nbsp; ,&nbsp;&nbsp;&nbsp; @@@@@@@P~_@@@@@@@@@@@@|
+|@@&nbsp;&nbsp; @,&nbsp;&nbsp; ,@@@,_____&nbsp;&nbsp; _,J@@@@@@@@@@@@@|
+|@@L&nbsp; `' ,@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+
+Here's a playful anti-aliased ascii font (3*3):
+
+&nbsp;&nbsp;&nbsp; !&nbsp; i-, ,=_ :\&nbsp; = - --= ,-, i i !&nbsp;&nbsp; i ! / i&nbsp;&nbsp; \&nbsp; /
+&nbsp;&nbsp; i=: :=\ :&nbsp;&nbsp; | ) |-&nbsp; |-&nbsp; | _ :_: :&nbsp;&nbsp; | =:&nbsp; :&nbsp;&nbsp; !""!
+&nbsp;&nbsp; j t |_) Y_- :=' o-= o&nbsp;&nbsp; Y-) ! ! i \-Y i \ =-- +&nbsp; +
+
+&nbsp; = : ,-, i-&nbsp; ,-, :-, ,-> ==- i i i i !&nbsp; ! \ / i i &lt;-=
+&nbsp; |\| [ ) :_) [ ) i_; "-,&nbsp; |&nbsp; | | \ / :/\:&nbsp; =&nbsp; ':'&nbsp; /
+&nbsp; : + "=" |&nbsp;&nbsp; "=t ! \ o_)&nbsp; !&nbsp; "="&nbsp; +&nbsp; !&nbsp; ! j t&nbsp; !&nbsp; o-=
+
+An anti-aliasing character palette should include these 'diagonals':
+&nbsp;&nbsp;&nbsp; JhjtY
+
+
+<A NAME="algorhythm"></A>A new anti-aliasing algorithm!
+
+Happily, as I was working on this faq, I ran across Rob Harley
+(robert@vlsi.cs.caltech.edu), who had some handy code for converting
+b&amp;w bitmaps according to a mapping like this:
+
+&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..
+&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@
+&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,&nbsp;&nbsp; .&nbsp;&nbsp; _&nbsp;&nbsp; -&nbsp;&nbsp; i&nbsp;&nbsp; v&nbsp;&nbsp; g&nbsp;&nbsp; -&nbsp;&nbsp; c&nbsp;&nbsp; i&nbsp;&nbsp; s&nbsp;&nbsp; =&nbsp;&nbsp; e&nbsp;&nbsp; z&nbsp;&nbsp; m
+
+&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@
+&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@
+&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@
+&nbsp; '&nbsp;&nbsp; !&nbsp;&nbsp; /&nbsp;&nbsp; 2&nbsp;&nbsp; !&nbsp;&nbsp; ]&nbsp;&nbsp; /&nbsp;&nbsp; d&nbsp;&nbsp; /&nbsp;&nbsp; (&nbsp;&nbsp; /&nbsp;&nbsp; K&nbsp;&nbsp; Y&nbsp;&nbsp; 4&nbsp;&nbsp; Z&nbsp;&nbsp; W
+
+&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.
+&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@
+&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@
+&nbsp; `&nbsp;&nbsp; \&nbsp;&nbsp; |&nbsp;&nbsp; L&nbsp;&nbsp; \&nbsp;&nbsp; \&nbsp;&nbsp; )&nbsp;&nbsp; G&nbsp;&nbsp; !&nbsp;&nbsp; t&nbsp;&nbsp; [&nbsp;&nbsp; b&nbsp;&nbsp; +&nbsp;&nbsp; N&nbsp;&nbsp; D&nbsp;&nbsp; W
+
+&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@
+&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; ..&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; .@&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @.&nbsp; @@&nbsp; @@&nbsp; @@&nbsp; @@
+&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@&nbsp; ..&nbsp; .@&nbsp; @.&nbsp; @@
+&nbsp; ~&nbsp;&nbsp; T&nbsp;&nbsp; 7&nbsp;&nbsp; X&nbsp;&nbsp; V&nbsp;&nbsp; Y&nbsp;&nbsp; Z&nbsp;&nbsp; 8&nbsp;&nbsp; f&nbsp;&nbsp; 5&nbsp;&nbsp; P&nbsp;&nbsp; K&nbsp;&nbsp; *&nbsp;&nbsp; M&nbsp;&nbsp; A&nbsp;&nbsp; @
+
+The most important factor in these assignments is not the letter
+shape alone, but the overall pixel density.&nbsp; On my Mac, these rows
+form an approximate greyscale, from 2 pixels per char, to six:
+
+2 _ivc=!/|\~
+3 gjez2]/(YL\)t[+T7Vf
+4 mdK4ZGbNDXY5P*
+5 W8KMA
+6 @&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;-- remember, this choice varies widely: @#%&amp;*
+
+Theoretically, these substitutions could turn 22*80 ascii resolution
+into 66*160.&nbsp; See rec.misc for the sourcecode and further details.
+Here's the output:
+
+i`it)v|[[[[(//s+)`(-\\/JJgbdd@@@@@@@dmKK(c!(/-[2=/cct/!-v\!_L\)|
+]-!/(!-)\L\)v|c5(!,!Ldd@@@@@@@@@@@@@@@@@@@dK/]!c\\\v|i\/cT\v((c-
+]!`/v\//(-|t\VvcL!m@@@@@M@@@@@@@@@@@@@@@@@@@@bLt\\|)c/2-vv)/it\.
+--/-,\,\v\,|)/v/m@@@@@@K@@@@@@@@@@@@@@@@@@@@@@@@bK!v!-( )-!.[/cT
+//.\--'--|-/c(e@@@@@@@DD@@@@@@@@@@@@@@@@@@@@@@@@@@s\\\\-||/v!c\.
+-,-|\`||\-\/id@@@@@@@@N@@@@@@@@@@@@@@@@@@@@@@@@@@@@@b.),`-,-/c-`i
+!,\!-!-!'!-!d@@@@@@@P[+~**AAA@@@@@@@@@@@@@@@@@@@@@@@b/./`c-/.\7-
+--'.-- -/,id@@@*P!`&nbsp;&nbsp;&nbsp;&nbbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \'Z8@@@@@@@@@@@@@@@@@@@@@i.\\'.\.c
+',`,`\'-,-J@@5`-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- `-iYA@@@@@@@@@@b@@@@@@@@@_\-|-\c-
+'. -.,`/.G@@K- `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - )7KM@@@@@@@@@@@@@@@@@@@c-----/
+- `-&nbsp; --i@@Ai&nbsp;&nbsp;&nbsp;&nbssp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -!ZZ@@@@@@@@@@@@@@@@@@@b! \`|-`
+&nbsp;`-,'- G@@@[,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '.D8K@@@@@@@@@@@@@@@@@@@[/-,-/.
+-` .-/v@@@A)&nbsp;&nbsp;&nbsp;&nbsp;&nbssp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -)ZdMd@@@@@@@@@@@@@@@@@@\' _\
+- ` ,iVJ@@@!&nbsp;&nbsp;&nbsp;&nbsp;&nbssp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '-!(K5K@@@@@@@@@@@@@@@@@@[(/s[.
+&nbsp; - i\G@@@Z-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' ! -i55ZZ@@@@@@@@@@@@@@@@@)(4)`
+&nbsp;, -|b@@@@!\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '&nbsp; ` |-tYG@@@@@@@@@@@@@@@@XNYZ-
+&nbsp;&nbsp; tt@@@@A-,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '&nbsp; `)(d@@@@@@@@@@@@@@@@D)8A[
+&nbsp;&nbsp; )8@@@@@\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,-'-/Kd@@@@@@@@@@@@@@@@@KD@[
+&nbsp; ]]Z@@@@d|-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ii.c,, -.icLZKK@@@@@@8@K@@@@@@@@@(@8[
+&nbsp; KN8@@@@@( .i!vGG_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; J4Kb8ZKb@bbK@d@88@@@@@@@b@@@@@@@@@@dK@-
+&nbsp;)/8K@@@K@b@dP~~~T4(&nbsp;&nbsp;&nbsp; Jd@@7`___s@M@@@@MM8d@@@d@@@@@@@@@@@@LM8[
+\!48@K@@@@8@@d*@@@bVi&nbsp;&nbsp; bAKLY~~@@@@@@*ff/\NM8@@@@@@@@@@@@@@@db@[
+,\\Kb@@@d@.~t` !*~!`.&nbsp; -MA)&nbsp;&nbsp;&nbsp; '~'.).` `,'K@@@@@@@@@@@@@@@@@AKb[
+,`8M@@@@@@ -`,,gvZ``&nbsp;&nbsp;&nbsp; A//-&nbsp; ..c\+\`&nbsp;&nbsp;&nbsp; i]d@@@@@@M@@@@@@@@@@@8[
+i\@8@K@@@D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \!'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; !iZ8@@@8A@@@@@8d@b@@@8M[
+e8d5@@@@@@&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '!-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '-)8@@@@@@@@@@@@@@@@@@M8i
+8dZ8@M@@@@-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v&nbsp; ,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,\tK@@@@@@@@@@@@A@@@@@@Z2|
+@b@AK@@@b@[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cctbA@@@AK@@d@@d@@@K@@@bmi
+@@8@M@8@@@P-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -=/.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /iD8d@@@@@@@@@@@@@@A@@@d@@[
+@8@@@MA@@@@\-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .&nbsp;&nbsp; _)g2i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -((dKK@@@@@d@@@@d@@K@@@@@@K[
+@@@bAK@@K@@)i&nbsp;&nbsp;&nbsp;&nbsp; 'c,,Kb@@bK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )X)Kb@M@@d@@@Mb@@A@d@@@@@@8@[
+@K@b@@@@A@AA/i-&nbsp;&nbsp;&nbsp;&nbsp; ~M@@@@Mc&nbsp;&nbsp;&nbsp; .,\c=)D8d@@b@@@d@@@@@@@@@@8d@@A[
+@@@@Mb@@@@@@('c\`&nbsp;&nbsp;&nbsp;&nbsp; PPK((,i]v|-\-v)8XNAdMK@@@@@@@b@@MK@A@@@@@[
+@@8@@MK@d@A@L!--c)s_, ,(ZsbLb@\`- .-N]/KM@@@@@@@d@@@A@@@@@@@@d@[
+@@Kb@@@K@b@@@/-&nbsp; !''~~Vff*N5f -` -,\))KK@@@@@@@MK@@d@@@M8d@b@@@[
+@b@@@KAK@@@@@@2--&nbsp;&nbsp;&nbsp; ,,_JJ/i)/- |/v)NK@8d@@@@@@@@@@8@@@@@@@@M@K[
+@@8d@K@@@b@@@@@d!,&nbsp;&nbsp; 'VV\)\\)\7(-)4Jb@8@A@@@K@d@@@@@@@8@@@@@@@@[
+M@@@@8@@K@Kb@@@d@v.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `-\\/v)88b@M@A@K@@M@@@A@@M@8@@A@d@8@M[
+Zb@d@M@K@@@@@@@@@@m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -)!/stbb@b@@A@b@@@@@Kb@@@@@@@b@@@K@@@[
+K@@d@@@@@d@M@8@@@@@Ks&nbsp;&nbsp; ,-/vJD@@8d@K@@@@@@8@@@@@@@@@@MK@@@b@@M@[
+tN@b@@d@d@M@@@@@@@@@@LL4JKd@A@@d@@K@@@@MK@@@@8@@@@@@@@@@@b@@@@@[
+)NM@8b@@A@@@A@@@@@@@@@@@@@@A@@A@@8@@K@d@@@@M@@K@@K@A@@@8@@M@@@@[
+(tMM@@@d@@M8@@@@A@@@@A@@@A@@@@@@@@@A@@@@8b@@8d@@@@@@@@@@@@@@@@M[
+tNZ@@K@@@d@@@@A@@@@@8@@@/4N@@8@b@@d@@M@8@MK@M8@K@@@@@@d@@@@@@@@[
+M/KA8@@@MA@@@M@@@@@@@@@@[|t*Z@N@@@@8@@M8ZAZZ@M@@@A@d@@@@@K@@@d@[
+bYJ4M@@@@@@A@@@@@@@@@@@@D.\'(YKKZD@8dK@5A84YZ@dM@@@@@@@@@@@@d@@[
+K5dM8@8d@d@@@@@@@@8@@@@@@..-!/))ZK5AK4)AY(/XY/Z@@@A@@@d@@@M@@@@[
+Y8dNA@@AK@@d@@@b@@@@@@@@@L,-,\!]]\X(5)Z/7c\\t5/K@@@@@@@@b@@@@@@[
+8M8@@@A@@@A@@8@@@@@@@@@KDLt! !,-|t'(-\\!,\/,\!ZJG@@@d@Md@@@G@@@[
+
+=----------=-&nbsp;&nbsp; ,!.&nbsp;&nbsp; --=----=----=----=----=----=----=----=----=----=----=
+Jorn Barger&nbsp;&nbsp;&nbsp;&nbsp; j't&nbsp;&nbsp; Anon-ftp to genesis.mcs.com in mcsnet.users/jorn for:
+&nbsp; &lt;:^)^:&lt;&nbsp;&nbsp; K=-=:: -=->&nbsp; Finnegans Wake, artificial intelligence, Ascii-TV,
+&nbsp;.::.:.::..&nbsp; "=i.: [-'&nbsp; fractal-thicket indexing, semantic-topology theory,
+jorn@mcs.com&nbsp; /;:":.\&nbsp;&nbsp;&nbsp; DecentWrite, MiniTech, nant/nart, flame theory &amp;c!
+=----------= ;}'&nbsp;&nbsp; '(, -=----=----=----=----=----=----=----=----=----=----=
+
+============================================================================</FONT></B></PRE>
+</TD>
+</TR>
+</TABLE></CENTER>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<CENTER><FORM><SELECT NAME="list" onChange="location.href=this.form.list.options[this.form.list.selectedIndex].value"><OPTION VALUE="please.html"><B>Guidelines
+For Using this ASCII Art<OPTION VALUE="index-3.html#home">Home Page&nbsp;<OPTION VALUE="#top">Top
+of this Page&nbsp;<OPTION VALUE="new.html">New ASCII Art by joan stark&nbsp;<OPTION VALUE="http://www.geocities.com/SoHo/Gallery/6446/index.html#javahome">JavaScript
+Animations&nbsp;<OPTION VALUE="disney.html">Disney Characters&nbsp;<OPTION VALUE="warnerb.html">WarnerBros/Universal
+Characters&nbsp;<OPTION VALUE="sesame.html">Sesame Street Characters&nbsp;<OPTION VALUE="comics.html">Comic
+Strip Characters&nbsp;<OPTION VALUE="crtoon2.html">Other Cartoon Characters&nbsp;<OPTION VALUE="aquatic.html">Aquatic
+Creatures&nbsp;<OPTION VALUE="birds.html">Birds&nbsp;<OPTION VALUE="farm.html">Farm
+Animals&nbsp;<OPTION VALUE="insects.html">Insects/Arachnids/Arthropods&nbsp;<OPTION VALUE="pets.html">Cats/Dogs/Rabbits/Mice
+(PETS)&nbsp;<OPTION VALUE="reptiles.html">Reptiles/Amphibians&nbsp;<OPTION VALUE="wildlife.html">North
+American Wildlife&nbsp;<OPTION VALUE="zoo.html">Zoo Animals&nbsp;<OPTION VALUE="newyear.html">New
+Year Celebration&nbsp;<OPTION VALUE="valentin.html">Valentine's Day/Teddy
+Bears<OPTION VALUE="easter.html">Easter/Spring&nbsp;<OPTION VALUE="stpat.html">St.Patrick's
+Day&nbsp;<OPTION VALUE="july4.html">July 4th&nbsp;<OPTION VALUE="haloween.html">Halloween/Spooky<OPTION VALUE="tgiving.html">Thanksgiving/Fall&nbsp;<OPTION VALUE="xmas.html">Christmas/Winter<OPTION VALUE="xmastory.html">Christmas
+Stories&nbsp;<OPTION VALUE="baby.html">New Baby&nbsp;<OPTION VALUE="wedding.html">Wedding/Thank
+You&nbsp;<OPTION VALUE="bday.html">Birthday<OPTION VALUE="mythical.html">Mythical
+People &amp; Creatures&nbsp;<OPTION VALUE="celestal.html">Celestial<OPTION VALUE="nature.html">Nature
+&amp; Scenery&nbsp;<OPTION VALUE="build.html">Buildings: Houses/Castles/more&nbsp;<OPTION VALUE="flowers.html">Flowers/Plants&nbsp;<OPTION VALUE="religion.html">Religion<OPTION VALUE="bodypart.html">Body
+Parts&nbsp;<OPTION VALUE="food.html">Food/Drink<OPTION VALUE="sports.html">Sports&nbsp;<OPTION VALUE="swim.html">Swimming&nbsp;<OPTION VALUE="electro.html">Gadgets
+and Electronic Things&nbsp;<OPTION VALUE="computer.html">Computers&nbsp;<OPTION VALUE="school.html">School/Education/Music/Tools<OPTION VALUE="flag.html">Flags&nbsp;<OPTION VALUE="transp.html">Transportation<OPTION VALUE="oddsends.html">Odds
+&amp; Ends&nbsp;<OPTION VALUE="cloth.html">Clothing/Personal Items<OPTION VALUE="font.html">Fonts&nbsp;<OPTION VALUE="men.html">Men&nbsp;<OPTION VALUE="women.html">Women<OPTION VALUE="couples.html">Couples&nbsp;<OPTION VALUE="kids.html">Babies/Kids<OPTION VALUE="people.html">Characters&nbsp;<OPTION VALUE="sigs.html">Signature
+Files&nbsp;<OPTION VALUE="stamps.html">Email Stamps&nbsp;<OPTION VALUE="logo.html">Logos/Signs<OPTION VALUE="scroll.html">Scrolling&nbsp;<OPTION VALUE="design.html">Shapes/Designs<OPTION VALUE="small.html">Small
+ASCII&nbsp;<OPTION VALUE="conversi.html">Solid -> Line&nbsp;<OPTION VALUE="spunk.html">Poems/Puns/Stories&nbsp;<OPTION VALUE="http://www.geocities.com/SoHo/Gallery/6446/">FUNNYBONE
+Issues&nbsp;<OPTION VALUE="color.html">Colorized ASCII&nbsp;<OPTION VALUE="favorite.html">My
+FAVORITE ASCII Art&nbsp;<OPTION VALUE="asciinfo.html">What is ASCII art?&nbsp;<OPTION VALUE="faq.html">ASCII
+ART FAQ&nbsp;<OPTION VALUE="minifaq.html">Mini-FAQ on Text Editors/Fonts&nbsp;<OPTION VALUE="cnvsprog.html">GIFSCII
+Info&nbsp;<OPTION VALUE="faq.html#figlet">FIGlet Info&nbsp;<OPTION VALUE="smiley.html">Smileys-Emoticons-Acronyms<OPTION VALUE="howto.html">How
+I Make This ASCII Art<OPTION VALUE="dcau.html">Tutorial by Daniel Au&nbsp;<OPTION VALUE="history.html">History
+of ASCII Art&nbsp;<OPTION VALUE="me.html">Who is Joan/jgs/spunk?&nbsp;<OPTION VALUE="awards.html">Site
+Awards and Recognition<OPTION VALUE="midiinfo.html">Midi File Information&nbsp;<OPTION VALUE="gifinfo.html">Animated
+GIF Information&nbsp;<OPTION VALUE="http://www.geocities.com/SoHo/">GEOCITIES/SPONSOR</B></SELECT><INPUT TYPE=BUTTON VALUE="-=[ GO ]=-" onClick="location.href=this.form.list.options[this.form.list.selectedIndex].value"></FORM>
+<BR><A HREF="index-2.html#home"><IMG SRC="jgshome2.gif" ALT="to main page" BORDER=0 HEIGHT=36 WIDTH=99></A><A HREF="search1.html"><IMG SRC="jgssearch.gif" ALT="Search this site" BORDER=0 HEIGHT=36 WIDTH=99></A></CENTER>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<CENTER></CENTER>
+
+</BODY>
+</HTML>
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="../../../us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="../../../geocities.com/js_source/geov2.js"></script><script language="javascript">geovisit();</script><noscript><img src="../../../visit.webhosting.yahoo.com/visit5dbb.gif?us1122011443" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=76001544&amp;t=1122011443&amp;f=us-w55" ALT=1 WIDTH=1 HEIGHT=1>

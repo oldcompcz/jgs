@@ -1,0 +1,376 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- .-~~-._.-~~-._.-~~-._.-~~-._.-~~-._.-~~-._.-~~-._.-~~-.
+                                     /:.:,
+                          O          \::/
+     .-~~-.             o            /|`
+                        _ '  sSSs   /:|       .-~~-.
+                         \\__\_SSSs/::|
+        ,sSSs             `--((S\SSSs/
+      ,SSSS_/ ,_              SS\\SSSs
+      sS/`))\//              sSS//SSs                .-~~-.
+      S//|_(\/                  `Ss'
+      S\\|::\       
+      SS` \:|      joan stark's ASCII Art Gallery
+           \|__        text graphics by "jgs"
+           /:::\                 
+      jgs  \:`'`     http://www.ascii-art.com
+                        spunk1111@juno.com 
+
+          this ASCII Art is copyrighted by joan stark
+               please read guidelines for use at:
+         http://www.geocities.com/SoHo/7373/please.htm
+
+    .-~~-._.-~~-._.-~~-._.-~~-._.-~~-._.-~~-._.-~~-._.-~~-. -->
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Joan Stark">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.06 [en] (Win98; U) [Netscape]">
+   <META NAME="Description" CONTENT="ASCII art gallery-- unique text graphics for use in email, ezines, BBSs, mIRC, MUDs, and text-only webpage development. This website showcases the amazing creations of 'jgs', as well as provides complete information, history, and tutorials.">
+   <META NAME="KeyWords" CONTENT="ascii art, ASCII, text pictures, email, asciiart, sigs, sig-files, signature file, typography, keyboard graphics, fonts, resource, mIRC, pop-ups, JavaScript animations, javascript, mirc, ansi, gallery, free, e-mail, birthday, cards, cartoons, characters, popups, software, flowers, animation, stark, joan, jgs, spunk, dragons, emoticons, smileys, mythology, animals, font, holiday, greetings,l'art d'cAscii, images, textes, sig-fichiers, fichier, typographie, graphiques, clavier, fontes, ressource, sauter-se leve, norme, galerie, libre, anniversaire, cartes, dessins animés, caracteres, logiciel, fleurs, rigide, émoticônes, mythologie, animaux, fonte, vacances, salutations, ascii-kunst, Textabbildungen, Sigdateien, Unterzeichnungdatei, Typographie, Tastaturgraphiken, Schriftkegel, Hilfsmittel,  knallen-pop-ups, frei, Geburtstag, Karten, Karikaturen, Zeichen,  Blumen, steif, Drachen, Tiere, Schriftkegel, Feiertag, Grüße">
+   <META name="mytopic" content="Arts & Literature:Visual Arts:Computer
+                    Art"> 
+   <META HTTP-EQUIV="PICS-Label" CONTENT="(PICS-1.1">
+   <META HTTP-EQUIV="Page-Enter" CONTENT="RevealTrans(Duration=4,Transition=23)">
+
+   <TITLE>:joan stark's ASCII Art Gallery:</TITLE>
+
+<!--Special Effects upon page enter Script- © Dynamic Drive (www.dynamicdrive.com) For full source code, installation instructions, 100's more DHTML Scripts, and Terms Of Use, visit dynamicdrive.com-->
+</HEAD>
+
+<BODY TEXT="#FFFFFF" BGCOLOR="#000000" LINK="#8080FF" VLINK="#FF00FF" ALINK="#009900" BACKGROUND="nitegreen2.jpg" BGPROPERTIES="fixed">
+
+
+
+<style>
+<!--
+      A:link {text-decoration: none}
+      A:visited {text-decoration: none}
+      A:active {text-decoration: underline; color: #AC80FF}
+      A:hover {color: #A601FE; text-decoration: underline}
+-->
+</style>
+
+<script>
+
+/*
+Cross browser cursor trailer script
+By Brian Caputo (bcaputo@icdc.com)
+Permission given to Dynamicdrive.com 
+to feature the script in it's DHTML archive
+For 100's more DHTML scripts and components,
+visit Dynamicdrive.com
+*/
+
+B=document.all;
+C=document.layers;
+T1=new Array("trail1a.gif",15,17,"trail2a.gif",14,16,"trail3a.gif",14,16,"trail4a.gif",12,14,"trail5a.gif",12,14,"trail9.gif",10,12,"trail6a.gif",10,12,"trail7a.gif",10,12,"trail8a.gif",8,10,"trail9.gif",8,10,"trail10.gif",8,10)
+nos=parseInt(T1.length/3)
+rate=50
+ie5fix1=0;
+ie5fix2=0;
+for (i=0;i<nos;i++){
+createContainer("CUR"+i,i*10,i*10,i*3+1,i*3+2,"","<img src='"+T1[i*3]+"' width="+T1[(i*3+1)]+" height="+T1[(i*3+2)]+" border=0>")}
+function createContainer(N,Xp,Yp,W,H,At,HT,Op,St){
+with (document){
+write((!B) ? "<layer id='"+N+"' left="+Xp+" top="+Yp+" width="+W+" height="+H : "<div id='"+N+"'"+" style='position:absolute;left:"+Xp+"; top:"+Yp+"; width:"+W+"; height:"+H+"; ");
+if(St){
+if (C)
+write(" style='");
+write(St+";' ")
+}
+else write((B)?"'":"");
+write((At)? At+">" : ">");
+write((HT) ? HT : "");
+if (!Op)
+closeContainer(N)
+}
+}
+function closeContainer(){
+document.write((B)?"</div>":"</layer>")
+}
+function getXpos(N){
+return (B) ? parseInt(B[N].style.left) : C[N].left
+}
+function getYpos(N){
+return (B) ? parseInt(B[N].style.top) : C[N].top
+}
+
+function moveContainer(N,DX,DY){
+c=(B) ? B[N].style :C[N];c.left=DX;c.top=DY
+}
+function cycle(){
+//if (IE5) 
+if (document.all&&window.print){
+ie5fix1=document.body.scrollLeft;
+ie5fix2=document.body.scrollTop;
+}
+for (i=0;i<(nos-1);i++){
+moveContainer("CUR"+i,getXpos("CUR"+(i+1)),getYpos("CUR"+(i+1)))
+}
+}
+function newPos(e){
+moveContainer("CUR"+(nos-1),(B)?event.clientX+ie5fix1:e.pageX+2,(B)?event.clientY+ie5fix2:e.pageY+2
+)
+}
+if(document.layers)
+document.captureEvents(Event.MOUSEMOVE)
+document.onmousemove=newPos
+setInterval("cycle()",rate)
+</script>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*</FONT><FONT COLOR="#8080FF">A</FONT><FONT COLOR="#009900">*:._.:*</FONT><FONT COLOR="#8080FF">S</FONT><FONT COLOR="#009900">*:._.:*</FONT><FONT COLOR="#8080FF">C</FONT><FONT COLOR="#009900">*:._.:*</FONT><FONT COLOR="#8080FF">I</FONT><FONT COLOR="#009900">*:._.:*</FONT><FONT COLOR="#8080FF">I</FONT><FONT COLOR="#009900">*:._.:*~*:._.:*</FONT><FONT COLOR="#8080FF">A</FONT><FONT COLOR="#009900">*:._.:*</FONT><FONT COLOR="#8080FF">R</FONT><FONT COLOR="#009900">*:._.:*</FONT><FONT COLOR="#8080FF">T</FONT><FONT COLOR="#009900">*:.</FONT></B></PRE></CENTER>
+
+<CENTER><TABLE COLS=2 WIDTH="600" >
+<TR>
+<TD WIDTH="120" HEIGHT="40">
+<CENTER><IMG SRC="jgsinitials.gif" ALT="jgs" BORDER=0 HEIGHT=40 WIDTH=60></CENTER>
+</TD>
+
+<TD COLSPAN="2" WIDTH="468" height="5"><CENTER><B><FONT FACE="Parisian BT"><FONT SIZE=-1>WWW.ASCII-ART.COM -- HOME OF "JGS"</FONT></FONT></B></CENTER></TD>
+</TR>
+
+<TR>
+<TD WIDTH="120">
+<CENTER><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-2>ASCII ARTWORK
+<BR>COPYRIGHTED<BR>&copy;1996-2001</FONT></FONT></B>
+<BR><B><I><FONT FACE="Arial,Helvetica"><FONT SIZE=-1><A HREF="mailto:spunk1111@juno.com">Joan
+G. Stark</A></FONT></FONT></I></B>
+
+<BR><B><FONT FACE="Arial,Helvetica"><FONT SIZE=-2>ALL RIGHTS <BR>RESERVED<BR>
+<P>LEAVE INITIALS
+<BR>ON ALL ASCII<BR>ART IMAGES<BR>
+
+<P>PLEASE READ<BR>
+THE <A HREF="please.html">GUIDELINES<BR>
+</A>FOR USING
+<BR>THIS ASCII ART</FONT></FONT></B></CENTER>
+</TD>
+
+<TD COLSPAN="2">
+<CENTER><A HREF="indexjava.html"><IMG SRC="entry5.jpg" ALT="Enter joan stark's ASCII Art Gallery !" BORDER=0 HEIGHT=260 WIDTH=400></A>
+
+<BR><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>or use:  <B><A HREF="index-2.html">NON-JAVA ENTRANCE</A></B><BR>(faster loading but less interesting)
+
+<BR><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>or:  <B><A HREF="http://www.geocities.com/joan_stark">NEW "TEXT" VERSION</A></B><BR>(under construction and very plain)
+
+</CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="3">
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD WIDTH="120">
+<CENTER>
+
+<A HREF="http://www.geocities.com/neighborhoods/somark.html">
+<IMG SRC="landmark3.gif" ALT="GeoCities Landmark Site" BORDER=0 HEIGHT=40 WIDTH=90></A>
+
+
+<BR><A HREF="http://www.thefreesite.com/"><IMG SRC="free88.gif" ALT="find freebies on the net" BORDER=0 HEIGHT=31 WIDTH=88></A>
+
+
+<BR><A HREF="http://www.tranexp.com/InterTran.cgi">
+         <IMG SRC="intertran.gif" BORDER=0 HEIGHT=30 WIDTH=88 ALT="Internet Translator (tm)   TRANSLATE THIS SITE! -- translate single words, phrases, sentences and entire web pages."></A>
+
+<BR><A HREF="http://www.dynamicdrive.com/"><IMG SRC="dynamic.gif" ALT="DHTML Scripts!" BORDER=0 HEIGHT=31 WIDTH=88></A>
+
+<br><A HREF="http://www.wwwomen.com/"><IMG SRC="wwwomen2.gif" ALT="WW Women Directory -- 'Women & Computers/Internet' section" BORDER=0 HEIGHT=46 WIDTH=88></A>
+
+<BR><A HREF="http://www.surferschoiceawards.com/"><IMG SRC="surferchoice99.gif" ALT="Surfers Choice Internet Award" BORDER=0 HEIGHT=115 WIDTH=90></A>
+<BR><FONT SIZE=-2>ID#scadbl07</FONT>
+
+<BR><!-- BEGIN WEBSIDESTORY CODE -->
+<!-- COPYRIGHT 1997-2000 WEBSIDESTORY, INC. ALL RIGHTS RESERVED. U.S.PATENT PENDING. Privacy notice at: http://websidestory.com/privacy -->
+<!-- webbot bot="HTMLMarkup" startspan -->
+<p align="center"><script language="javascript"> var test=0;</script> <SCRIPT LANGUAGE="javascript1.1" 
+src="http://js1.hitbox.com/js?acct=WQ590921FHDZ06EN0&amp;m=wf138&amp;n=joan stark's ASCII Art Gallery">
+</SCRIPT><SCRIPT LANGUAGE="javascript">
+if (test==0) { var dt=0, sv=10, ss="na",sc="na",ln="",pl="",rf="",bn="",ja="",bv=0,x1="",x2="",x3="",arg="";
+rf=escape(document.referrer)+"";if((rf=="undefined")||(rf=="")){rf="bookmark";}
+bv=Math.round(parseFloat(navigator.appVersion)*100);bn=navigator.appName;
+if(bn!="Netscape"){dt=(new Date()).getHours();};if(bn.substring(0,9)=="Microsoft"){bn="MSIE";}
+if((bn=="MSIE")&&(parseInt(bv)==2)){bv=302;};ja="na";
+x1="<a href='http://rd1.hitbox.com/rd?acct=WQ590921FHDZ06EN0' target='_top'>";
+x2="<img src='http://hg1.hitbox.com/HG?hc=wf138&cd=1&hb=WQ590921FHDZ06EN0&n=joan stark's ASCII Art Gallery";
+x3="&cd=1&bt=2' border=0 height=62 width=88></a>";
+arg="&bn="+bn+"&bv="+bv+"&ss="+ss+"&sc="+sc+"&dt="+dt+"&sv="+sv;
+arg+="&ja="+ja+"&rf="+rf+"&ln="+ln+"&pl="+escape(pl);document.write(x1+x2+arg+x3);}</SCRIPT>
+<script language="javascript1.2">document.write("<");document.write("!--  ");</script>
+<noscript><a href="http://rd1.hitbox.com/rd?acct=WQ590921FHDZ06EN0" target="_top">
+<img src="http://hg1.hitbox.com/HG?hc=wf138&amp;cd=1&amp;hb=WQ590921FHDZ06EN0&amp;n=joan stark's ASCII Art Gallery"
+border=0 height=62 width=88></a></noscript>
+<script language="javascript1.2"> document.write("  --");document.write(">");</script></p>
+<!-- webbot bot="HTMLMarkup" endspan -->
+<!-- END WEBSIDESTORY CODE  -->
+
+<BR><!-- Begin PayPal Logo -->
+<FORM ACTION="https://secure.paypal.com/cgi-bin/webscr" METHOD="POST">
+<INPUT TYPE="hidden" NAME="cmd" VALUE="_xclick">
+<INPUT TYPE="hidden" NAME="business" VALUE="spunk1111@aol.com"><INPUT TYPE="hidden" NAME="return" VALUE="http://www.geocities.com/spunk1111/thanks.htm">
+<INPUT TYPE="image" SRC="../../../images.paypal.com/images/x-click-but7.gif" NAME="submit" ALT="Send a donation to 'jgs' with PayPal - it's fast, free and secure!">
+</FORM>
+<!-- End PayPal Logo -->
+
+</CENTER>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:.</FONT></B></PRE></CENTER>
+
+<CENTER><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>DON'T FORGET<BR>TO <BR>BOOKMARK
+<BR>THIS SITE
+<BR>--AND--
+<BR>SHARE THE
+<BR>URL WITH
+<BR>A FRIEND.
+<BR>THANK YOU!<BR> -jgs</FONT></FONT></CENTER>
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:.</FONT></B></PRE></CENTER>
+<CENTER><B><I><FONT FACE="Arial,Helvetica"><FONT SIZE=-1>recent honor:</FONT></FONT></I></B>
+<BR>
+
+<A HREF="http://www.nwf.org/rrick/2000/oct00/index.html"><IMG SRC="rrickcover.jpg" ALT="Ranger Rick Magazine-October 2000" BORDER=0 HEIGHT=150 WIDTH=120></A>
+</CENTER>
+</TD>
+
+<TD COLSPAN="2">
+<CENTER><FONT FACE="Arial,Helvetica">
+<B>IMPORTANT:  Please read!</B>
+<BR>Make sure that your browser is set to a
+<BR>fixed-width font such as Courier or Fixed-Sys.
+<BR>Otherwise, this ASCII Art may look skewed.
+<BR>If the below two lines are the same length,
+<BR>then your browser is fine:</FONT>
+
+<PRE><B><FONT COLOR="#AC80FF">
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII</FONT></B></PRE>
+
+</CENTER>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<center><FONT FACE="Arial,Helvetica"><b>DO YOU THINK TEXT ART IS DULL?</b>
+<BR>You might not think so after visiting this website.
+<BR>There is much more to these low bandwidth graphics
+<BR>than smileys and emoticons. ASCII Art has progressed
+<BR>beyond being a simple computer graphics technique
+<BR>and has become a popular art form. You'll be amazed
+<BR>at what can be created by only using ASCII (American
+<BR>Standard Code of Information Interchange) characters.
+<BR>Some of the text graphics at this site are html-colorized,
+<BR>some are JavaScript-animated, others are simply text.
+<BR>All are unique, created by hand, and certainly not the
+<BR>same ol' boring text art that you might be expecting!
+
+
+<P>You will also find ASCII art information, history,
+<BR>FAQs, links, and tutorials at this site.
+<BR>One tutorial allows users (IE4) to drag text characters
+<BR>across the webpage in order to replicate an ASCII art
+<BR>image!  You'll find other surprises too.
+<BR>Enjoy your time spent at my ASCII Art Gallery...
+<BR>Please bookmark this site and tell a cyberfriend about it.</font></center>
+
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<BLOCKQUOTE>
+<PRE><B><FONT COLOR="#C0C0C0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</FONT><FONT FACE="Arial,Helvetica"><FONT COLOR="#AC80FF"><A HREF="mailto:spunk1111@juno.com">E</A></FONT></FONT><FONT COLOR="#C0C0C0">]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .-|=====-.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | </FONT><FONT FACE="Arial,Helvetica"><FONT COLOR="#FFFFFF"><A HREF="mailto:spunk1111@juno.com">MAIL</A></FONT></FONT><FONT COLOR="#C0C0C0"> |&nbsp;&nbsp; </FONT><FONT COLOR="#AC80FF">&lt;----&nbsp; <FONT FACE="Arial,Helvetica">Send email to jgs
+</FONT></FONT><FONT COLOR="#C0C0C0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |________|___
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </FONT><FONT COLOR="#FF8000">||
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ||
+</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT COLOR="#FF8000">||</FONT>&nbsp;&nbsp; <FONT COLOR="#FFFF00">www&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </FONT><FONT COLOR="#CC33CC">%%%
+</FONT>&nbsp;&nbsp;&nbsp;&nbsp; <FONT COLOR="#FF80FF">vwv</FONT>&nbsp;&nbsp;&nbsp; <FONT COLOR="#FF8000">||</FONT>&nbsp;&nbsp; <FONT COLOR="#FFFF00">)_(</FONT><FONT COLOR="#FF80C0">,;;;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,;,</FONT><FONT COLOR="#CC33CC">\_/</FONT> <FONT COLOR="#FFCC00">www
+</FONT>&nbsp;&nbsp;&nbsp;&nbsp; <FONT COLOR="#FF00FF">)_(</FONT>&nbsp;&nbsp;&nbsp; <FONT COLOR="#FF8000">||</FONT>&nbsp;&nbsp; <FONT COLOR="#008000">\|/</FONT> <FONT COLOR="#FF80C0">\_/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )_(</FONT><FONT COLOR="#009900">\|</FONT><FONT COLOR="#FF80C0">&nbsp; </FONT><FONT COLOR="#FFCC00">(_)
+</FONT><FONT COLOR="#FF80C0">&nbsp;&nbsp;&nbsp;&nbsp; </FONT><FONT COLOR="#008000">\|&nbsp;&nbsp; \</FONT> <FONT COLOR="#FF8000">||</FONT> <FONT COLOR="#008000">/\\|/&nbsp; |/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \| \|// |&nbsp;
+&nbsp; ___\|//jgs|</FONT><FONT COLOR="#FF8000">|</FONT><FONT COLOR="#008000">//_\V/_\|//_______\\|//V/\\|/__</FONT></B></PRE>
+</BLOCKQUOTE>
+
+<CENTER><PRE><B><I><FONT FACE="Arial,Helvetica"><FONT COLOR="#AC80FF">site established 96'September
+ last updated 01'June</FONT></FONT></I></B></PRE></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD COLSPAN="3">
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE>
+
+<marquee behavior="alternate"><B><FONT COLOR="#8080FF">-=</FONT><FONT COLOR="#FF00FF">{</FONT><FONT COLOR="#009900">+</FONT><FONT COLOR="#FF00FF">}</FONT><FONT COLOR="#8080FF">=-</FONT>
+http://www.ascii-art.com/ <FONT COLOR="#8080FF">-=</FONT><FONT COLOR="#FF00FF">{</FONT><FONT COLOR="#009900">+</FONT><FONT COLOR="#FF00FF">}</FONT><FONT COLOR="#8080FF">=-</FONT>
+</B></marquee>
+
+<PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+</TD>
+</TR>
+</TABLE></CENTER>
+
+<CENTER><!-- ASCII ART RING CODE -->
+<FONT FACE="Arial,Helvetica"><FONT SIZE=-1>THIS SITE IS PART OF THE</FONT></FONT>
+<BR><FONT FACE="Arial,Helvetica"><FONT SIZE=-1><B><A HREF="http://www.angelfire.com/me2/jro/ring.html">( <U>ASCII ART RING</U> )</A>
+<BR>- <A HREF="http://www.webring.org/cgi-bin/webring?ring=ascii&amp;id=4&amp;sprev" target="_top">Skip
+Previous</A> -- <A HREF="http://www.webring.org/cgi-bin/webring?ring=ascii&amp;id=4&amp;prev" target="_top">Previous</A> -- <A HREF="http://www.webring.org/cgi-bin/webring?ring=ascii&amp;id=4&amp;next" target="_top">Next</A> -- <A HREF="http://www.webring.org/cgi-bin/webring?ring=ascii&amp;id=4&amp;skip" target="_top">Skip
+Next</A> -- <A HREF="http://www.webring.org/cgi-bin/webring?random&amp;ring=ascii" target="_top">Random</A> -- <A HREF="http://www.webring.org/cgi-bin/webring?ring=ascii&amp;id=4&amp;next5" target="_top">Next
+5</A> -- <A HREF="http://www.webring.org/cgi-bin/webring?ring=ascii&amp;list" target="_top">List
+Sites</A> -</B></FONT></FONT>
+<!--STOP ASCII ART RING CODE HERE--></CENTER>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<center>
+	<!-- BEGIN GeoCounter Code -->
+<SCRIPT><!--
+z="&r="+escape(document.referrer);v="1.0"
+z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+//--></SCRIPT>
+<SCRIPT language="javascript1.2"><!--
+z=z+"&s="+screen.width+"x"+screen.height;z=z+"&o="+navigator.platform;v="1.2";
+if (navigator.appName != "Netscape") {z=z+"&c="+screen.colorDepth}
+else {z=z+"&c="+screen.pixelDepth}
+z=z+"&j="+navigator.javaEnabled();
+//-->
+</SCRIPT>
+<SCRIPT><!--
+z=z+"&v="+v;
+document.write("<IMG BORDER=0 SRC=\"../../../abacus.geocities.com_7778/countad29.gif?i=GixSQR-s00019291"+z+"\">\n<!"+"--\n");
+//--></SCRIPT>
+<NOSCRIPT>
+<IMG SRC="../../../abacus.geocities.com_7778/countad29.gif?i=GixSQR-s00019291" BORDER=0>
+</NOSCRIPT>
+<SCRIPT>
+document.write("\n//--"+">\n");
+</SCRIPT>
+<!-- END GeoCounter Code -->
+<B><FONT FACE="Arial,Helvetica"><FONT SIZE=-2><FONT COLOR="#009900">SINCE 28.JUNE.99</FONT></FONT></FONT></B><BR></center>
+
+
+<CENTER></CENTER>
+
+<BR><a target="_top" href="http://extreme-dm.com/s/?tag=spunkers">
+<img name=im src="http://extreme-dm.com/i/" height=25 border=0 
+width=25 alt="stats"></a><script language="javascript"><!--
+an=navigator.appName;d=document;function
+pr(){d.write("<img src=\"http://extreme-dm.com/",
+"/z/?tag=spunkers&j=y&srw="+srw+"&srb="+srb+"&",
+"rs="+r+"&l="+escape(d.referrer)+"\" height=1 ",
+"width=1>");}srb="na";srw="na";//-->
+</script><script language="javascript1.2"><!--
+s=screen;srw=s.width;an!="Netscape"?
+srb=s.colorDepth:srb=s.pixelDepth;//-->
+</script><script language="javascript"><!--
+r=41;d.images?r=d.im.width:z=0;pr();//-->
+</script><noscript><img height=1 width=1 alt=""
+src="http://extreme-dm.com/z/?tag=spunkers&amp;j=n"></noscript><BR>
+
+
+</BODY>
+</HTML>
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="../../../us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="../../../geocities.com/js_source/geov2.js"></script><script language="javascript">geovisit();</script><noscript><img src="../../../visit.webhosting.yahoo.com/visit59c7.gif?us1122011127" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=76001544&amp;t=1122011127&amp;f=us-w64" ALT=1 WIDTH=1 HEIGHT=1>
