@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Joan Stark">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.06 [en] (Win98; U) [Netscape]">
+   <TITLE>Build a Flower- ASCII Art</TITLE>
+<STYLE>
+<!--
+.drag{position:relative;cursor:hand}
+-->
+</STYLE>
+<SCRIPT language="JavaScript1.2">
+<!--
+
+/*
+Drag and Drop Script- 
+© Dynamic Drive (www.dynamicdrive.com)
+For full source code, installation instructions,
+100's more DHTML scripts, and Terms Of
+Use, visit dynamicdrive.com
+*/
+
+var dragapproved=false
+var z,x,y
+function move(){
+if (event.button==1&&dragapproved){
+z.style.pixelLeft=temp1+event.clientX-x
+z.style.pixelTop=temp2+event.clientY-y
+return false
+}
+}
+function drags(){
+if (!document.all)
+return
+if (event.srcElement.className=="drag"){
+dragapproved=true
+z=event.srcElement
+temp1=z.style.pixelLeft
+temp2=z.style.pixelTop
+x=event.clientX
+y=event.clientY
+document.onmousemove=move
+}
+}
+document.onmousedown=drags
+document.onmouseup=new Function("dragapproved=false")
+//-->
+</SCRIPT>
+</HEAD>
+<BODY TEXT="#FFFFFF" BGCOLOR="#000000" LINK="#8080FF" VLINK="#FF00FF" ALINK="#009900" BACKGROUND="nitegreen2.jpg" BGPROPERTIES="fixed">
+
+<CENTER><PRE><A NAME="top"></A><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<CENTER><B><I><FONT COLOR="#8080FF"><FONT SIZE=+3>GIVE THE ASCII ART A
+TRY...</FONT></FONT></I></B>
+<BR><FONT FACE="Arial,Helvetica"><FONT COLOR="#FFFFFF">This will work with
+Internet Explorer 4.0+ only.
+<BR>The text and symbol characters in the blue box can be dragged--
+<BR>which means that if you click and hold your mouse on them,
+<BR>you can move the characters to any place on the page.
+<BR>You can build your own ASCII art image!</FONT></FONT></CENTER>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<CENTER><FONT FACE="Arial,Helvetica">Try to build the ASCII art flower
+by dragging the
+<BR>movable characters into the grid --one
+character per space.
+<BR>(I've included some extra characters for
+you too!)</FONT><FONT FACE="Arial,Helvetica">
+<P>And just for fun, you can drag the butterflies
+to hover around the flowers!</FONT></CENTER>
+
+<CENTER><TABLE BORDER COLS=3 WIDTH="600" HEIGHT="300" >
+<TR>
+<TD WIDTH="200" HEIGHT="300" BGCOLOR="#8080FF">
+<CENTER><FONT FACE="Arial,Helvetica"><FONT COLOR="#000000">Here are the
+characters
+<BR>which can be dragged:</FONT></FONT>
+
+<PRE>
+<B><FONT COLOR="#000000"><FONT SIZE=+2>
+<b class="drag">,</b><b class="drag">,</b><b class="drag">,</b><b class="drag">,</b><b class="drag">.</b><b class="drag">.</b><b class="drag">.</b><b class="drag">.</b>
+<b class="drag">-</b><b class="drag">-</b><b class="drag">-</b><b class="drag">-</b><b class="drag">-</b><b class="drag">-</b><b class="drag">-</b><b class="drag">-</b>
+<b class="drag">'</b><b class="drag">'</b><b class="drag">'</b><b class="drag">'</b><b class="drag">=</b><b class="drag">=</b><b class="drag">=</b><b class="drag">=</b>
+<b class="drag">|</b><b class="drag">|</b><b class="drag">|</b><b class="drag">|</b><b class="drag">|</b><b class="drag">|</b><b class="drag">|</b><b class="drag">|</b>
+<b class="drag">{</b><b class="drag">{</b><b class="drag">{</b><b class="drag">{</b><b class="drag">}</b><b class="drag">}</b><b class="drag">}</b><b class="drag">}</b>
+<b class="drag">/</b><b class="drag">/</b><b class="drag">/</b><b class="drag">/</b><b class="drag">/</b><b class="drag">/</b><b class="drag">/</b><b class="drag">/</b>
+<b class="drag">\</b><b class="drag">\</b><b class="drag">\</b><b class="drag">\</b><b class="drag">\</b><b class="drag">\</b><b class="drag">\</b><b class="drag">\</b><b class="drag">\</b><b class="drag">\</b><b class="drag">\</b><b class="drag">\</b><b class="drag">\</b>
+<b class="drag">_</b><b class="drag">_</b><b class="drag">_</b><b class="drag">_</b><b class="drag">`</b><b class="drag">`</b><b class="drag">`</b><b class="drag">`</b>
+<b class="drag">o</b><b class="drag">o</b><b class="drag">O</b><b class="drag">O</b><b class="drag">*</b><b class="drag">*</b><b class="drag">^</b><b class="drag">^</b>
+<b class="drag">+</b><b class="drag">+</b><b class="drag">~</b><b class="drag">~</b><b class="drag">]</b><b class="drag">]</b><b class="drag">[</b><b class="drag">[</b>
+</FONT></FONT></B>
+</PRE></CENTER>
+
+<CENTER><IMG SRC="butteflypink.gif" class="drag" ><IMG SRC="butter.gif" class="drag" ><IMG SRC="butterfly2.gif" class="drag" ><IMG SRC="butter.gif" class="drag" >
+<BR><IMG SRC="butterfly2.gif" class="drag" ><IMG SRC="butter.gif" class="drag" ><IMG SRC="butterfly2.gif" class="drag" ><IMG SRC="butteflypink.gif" class="drag" ></CENTER>
+</TD>
+
+<TD WIDTH="200" HEIGHT="300" BACKGROUND="gridblue2.gif">.</TD>
+
+<TD WIDTH="200" HEIGHT="300" BGCOLOR="#FFFFFF">
+<PRE><B><FONT SIZE=+2><FONT COLOR="#000000">
+            ,
+        .--'|}
+       /    /}}
+     .=\.--'`\}
+    //` '---./`
+    ||  /|
+   , \\| |
+   |\_\\/
+   \__/\\
+        \\
+  </FONT><FONT COLOR="#FFFFFF">jgs</FONT><FONT COLOR="#000000">    \|</FONT></FONT></B></PRE>
+</TD>
+</TR>
+</TABLE></CENTER>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<CENTER><FORM><SELECT NAME="list" onChange="location.href=this.form.list.options[this.form.list.selectedIndex].value"><OPTION VALUE="please.html"><B>Guidelines
+For Using this ASCII Art&nbsp;<OPTION VALUE="index-3.html#home">Home Page&nbsp;<OPTION VALUE="#top">Top
+of this Page&nbsp;<OPTION VALUE="new.html">New ASCII Art by joan stark&nbsp;<OPTION VALUE="http://www.geocities.com/SoHo/Gallery/6446/index.html#javahome">JavaScript
+Animations&nbsp;<OPTION VALUE="disney.html">Disney Characters&nbsp;<OPTION VALUE="warnerb.html">WarnerBros/Universal
+Characters&nbsp;<OPTION VALUE="sesame.html">Sesame Street Characters&nbsp;<OPTION VALUE="comics.html">Comic
+Strip Characters&nbsp;<OPTION VALUE="crtoon2.html">Other Cartoon Characters&nbsp;<OPTION VALUE="aquatic.html">Aquatic
+Creatures&nbsp;<OPTION VALUE="birds.html">Birds&nbsp;<OPTION VALUE="farm.html">Farm
+Animals&nbsp;<OPTION VALUE="insects.html">Insects/Arachnids/Arthropods&nbsp;<OPTION VALUE="pets.html">Cats/Dogs/Rabbits/Mice
+(PETS)&nbsp;<OPTION VALUE="reptiles.html">Reptiles/Amphibians&nbsp;<OPTION VALUE="wildlife.html">North
+American Wildlife&nbsp;<OPTION VALUE="zoo.html">Zoo Animals&nbsp;<OPTION VALUE="newyear.html">New
+Year Celebration&nbsp;<OPTION VALUE="valentin.html">Valentine's Day/Teddy
+Bears<OPTION VALUE="easter.html">Easter/Spring&nbsp;<OPTION VALUE="stpat.html">St.Patrick's
+Day&nbsp;<OPTION VALUE="july4.html">July 4th&nbsp;<OPTION VALUE="haloween.html">Halloween/Spooky<OPTION VALUE="tgiving.html">Thanksgiving/Fall&nbsp;<OPTION VALUE="xmas.html">Christmas/Winter<OPTION VALUE="xmastory.html">Christmas
+Stories&nbsp;<OPTION VALUE="baby.html">New Baby&nbsp;<OPTION VALUE="wedding.html">Wedding/Thank
+You&nbsp;<OPTION VALUE="bday.html">Birthday<OPTION VALUE="mythical.html">Mythical
+People &amp; Creatures&nbsp;<OPTION VALUE="celestal.html">Celestial<OPTION VALUE="nature.html">Nature
+&amp; Scenery&nbsp;<OPTION VALUE="build.html">Buildings: Houses/Castles/more&nbsp;<OPTION VALUE="flowers.html">Flowers/Plants&nbsp;<OPTION VALUE="religion.html">Religion<OPTION VALUE="bodypart.html">Body
+Parts&nbsp;<OPTION VALUE="food.html">Food/Drink<OPTION VALUE="sports.html">Sports&nbsp;<OPTION VALUE="swim.html">Swimming&nbsp;<OPTION VALUE="electro.html">Gadgets
+and Electronic Things&nbsp;<OPTION VALUE="computer.html">Computers&nbsp;<OPTION VALUE="school.html">School/Education/Music/Tools<OPTION VALUE="flag.html">Flags&nbsp;<OPTION VALUE="transp.html">Transportation<OPTION VALUE="oddsends.html">Odds
+&amp; Ends<OPTION VALUE="cloth.html">Clothing/Personal Items<OPTION VALUE="font.html">Fonts&nbsp;<OPTION VALUE="men.html">Men&nbsp;<OPTION VALUE="women.html">Women<OPTION VALUE="couples.html">Couples&nbsp;<OPTION VALUE="kids.html">Babies/Kids<OPTION VALUE="people.html">Characters&nbsp;<OPTION VALUE="sigs.html">Signature
+Files&nbsp;<OPTION VALUE="stamps.html">Email Stamps&nbsp;<OPTION VALUE="logo.html">Logos/Signs<OPTION VALUE="scroll.html">Scrolling&nbsp;<OPTION VALUE="design.html">Shapes/Designs<OPTION VALUE="small.html">Small
+ASCII&nbsp;<OPTION VALUE="conversi.html">Solid -> Line&nbsp;<OPTION VALUE="spunk.html">Poems/Puns/Stories&nbsp;<OPTION VALUE="http://www.geocities.com/SoHo/Gallery/6446/">FUNNYBONE
+Issues&nbsp;<OPTION VALUE="color.html">Colorized ASCII&nbsp;<OPTION VALUE="favorite.html">My
+FAVORITE ASCII Art&nbsp;<OPTION VALUE="asciinfo.html">What is ASCII art?&nbsp;<OPTION VALUE="faq.html">ASCII
+ART FAQ&nbsp;<OPTION VALUE="minifaq.html">Mini-FAQ on Text Editors/Fonts&nbsp;<OPTION VALUE="cnvsprog.html">GIFSCII
+Info&nbsp;<OPTION VALUE="faq.html#figlet">FIGlet Info&nbsp;<OPTION VALUE="smiley.html">Smileys-Emoticons-Acronyms<OPTION VALUE="howto.html">How
+I Make This ASCII Art<OPTION VALUE="dcau.html">Tutorial by Daniel Au&nbsp;<OPTION VALUE="history.html">History
+of ASCII Art&nbsp;<OPTION VALUE="me.html">Who is Joan/jgs/spunk?&nbsp;<OPTION VALUE="awards.html">Site
+Awards and Recognition<OPTION VALUE="midiinfo.html">Midi File Information&nbsp;<OPTION VALUE="gifinfo.html">Animated
+GIF Information&nbsp;<OPTION VALUE="http://www.geocities.com/SoHo/">GEOCITIES/SPONSOR</B></SELECT><INPUT TYPE=BUTTON VALUE="-=[ GO ]=-" onClick="location.href=this.form.list.options[this.form.list.selectedIndex].value"></FORM>
+<BR><A HREF="index-2.html#home"><IMG SRC="jgshome2.gif" ALT="to main page" BORDER=0 HEIGHT=36 WIDTH=99></A><A HREF="search1.html"><IMG SRC="jgssearch.gif" ALT="Search this site" BORDER=0 HEIGHT=36 WIDTH=99></A>
+<BR><A HREF="http://www.dynamicdrive.com/"><IMG SRC="dynamic.gif" ALT="DHTML Scripts!" BORDER=0 HEIGHT=31 WIDTH=88></A></CENTER>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+<CENTER></CENTER>
+</BODY>
+</HTML>
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="../../../us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="../../../geocities.com/js_source/geov2.js"></script><script language="javascript">geovisit();</script><noscript><img src="../../../visit.webhosting.yahoo.com/visit2c8c.gif?us1122011496" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=76001544&amp;t=1122011496&amp;f=us-w63" ALT=1 WIDTH=1 HEIGHT=1>

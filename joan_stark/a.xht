@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html [
+  <!ENTITY % htmlDTD
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "DTD/xhtml1-strict.dtd">
+  %htmlDTD;
+  <!ENTITY % netErrorDTD
+    SYSTEM "chrome://global/locale/netError.dtd">
+  %netErrorDTD;
+
+<!ENTITY loadError.label "Problem loading page">
+<!ENTITY retry.label "Try Again">
+<!ENTITY returnToPreviousPage.label "Go Back">
+<!ENTITY advanced.label "Advanced">
+
+<!-- Specific error messages -->
+
+<!ENTITY connectionFailure.title "Unable to connect">
+<!ENTITY connectionFailure.longDesc "&sharedLongDesc;">
+
+<!ENTITY deniedPortAccess.title "This address is restricted">
+<!ENTITY deniedPortAccess.longDesc "">
+
+<!ENTITY dnsNotFound.title "Server not found">
+<!ENTITY dnsNotFound.longDesc "
+<ul>
+  <li>Check the address for typing errors such as
+    <strong>ww</strong>.example.com instead of
+    <strong>www</strong>.example.com</li>
+  <li>If you are unable to load any pages, check your computer’s network
+    connection.</li>
+  <li>If your computer or network is protected by a firewall or proxy, make sure
+    that &brandShortName; is permitted to access the Web.</li>
+</ul>
+">
+
+<!ENTITY fileNotFound.title "File not found">
+<!ENTITY fileNotFound.longDesc "
+<ul>
+  <li>Check the file name for capitalization or other typing errors.</li>
+  <li>Check to see if the file was moved, renamed or deleted.</li>
+</ul>
+">
+
+<!ENTITY fileAccessDenied.title "Access to the file was denied">
+<!ENTITY fileAccessDenied.longDesc "
+<ul>
+  <li>It may have been removed, moved, or file permissions may be preventing access.</li>
+</ul>
+">
+
+<!ENTITY generic.title "Oops.">
+<!ENTITY generic.longDesc "
+<p>&brandShortName; can’t load this page for some reason.</p>
+">
+
+<!ENTITY captivePortal.title "Log in to network">
+<!ENTITY captivePortal.longDesc2 "
+<p>You must log in to this network before you can access the Internet.</p>
+">
+
+<!ENTITY openPortalLoginPage.label2 "Open Network Login Page">
+
+<!ENTITY malformedURI.title "The address isn’t valid">
+<!ENTITY malformedURI.longDesc "
+<ul>
+  <li>Web addresses are usually written like
+    <strong>http://www.example.com/</strong></li>
+  <li>Make sure that you’re using forward slashes (i.e.
+    <strong>/</strong>).</li>
+</ul>
+">
+
+<!ENTITY netInterrupt.title "The connection was interrupted">
+<!ENTITY netInterrupt.longDesc "&sharedLongDesc;">
+
+<!ENTITY notCached.title "Document Expired">
+<!ENTITY notCached.longDesc "<p>The requested document is not available in &brandShortName;’s cache.</p><ul><li>As a security precaution, &brandShortName; does not automatically re-request sensitive documents.</li><li>Click Try Again to re-request the document from the website.</li></ul>">
+
+<!ENTITY netOffline.title "Offline mode">
+<!ENTITY netOffline.longDesc2 "
+<ul>
+  <li>Press &quot;Try Again&quot; to switch to online mode and reload the page.</li>
+</ul>
+">
+
+<!ENTITY contentEncodingError.title "Content Encoding Error">
+<!ENTITY contentEncodingError.longDesc "
+<ul>
+  <li>Please contact the website owners to inform them of this problem.</li>
+</ul>
+">
+
+<!ENTITY unsafeContentType.title "Unsafe File Type">
+<!ENTITY unsafeContentType.longDesc "
+<ul>
+  <li>Please contact the website owners to inform them of this problem.</li>
+</ul>
+">
+
+<!ENTITY netReset.title "The connection was reset">
+<!ENTITY netReset.longDesc "&sharedLongDesc;">
+
+<!ENTITY netTimeout.title "The connection has timed out">
+<!ENTITY netTimeout.longDesc "&sharedLongDesc;">
+
+<!ENTITY unknownProtocolFound.title "The address wasn’t understood">
+<!ENTITY unknownProtocolFound.longDesc "
+<ul>
+  <li>You might need to install other software to open this address.</li>
+</ul>
+">
+
+<!ENTITY proxyConnectFailure.title "The proxy server is refusing connections">
+<!ENTITY proxyConnectFailure.longDesc "
+<ul>
+  <li>Check the proxy settings to make sure that they are correct.</li>
+  <li>Contact your network administrator to make sure the proxy server is
+    working.</li>
+</ul>
+">
+
+<!ENTITY proxyResolveFailure.title "Unable to find the proxy server">
+<!ENTITY proxyResolveFailure.longDesc "
+<ul>
+  <li>Check the proxy settings to make sure that they are correct.</li>
+  <li>Check to make sure your computer has a working network connection.</li>
+  <li>If your computer or network is protected by a firewall or proxy, make sure
+    that &brandShortName; is permitted to access the Web.</li>
+</ul>
+">
+
+<!ENTITY redirectLoop.title "The page isn’t redirecting properly">
+<!ENTITY redirectLoop.longDesc "
+<ul>
+  <li>This problem can sometimes be caused by disabling or refusing to accept
+    cookies.</li>
+</ul>
+">
+
+<!ENTITY unknownSocketType.title "Unexpected response from server">
+<!ENTITY unknownSocketType.longDesc "
+<ul>
+  <li>Check to make sure your system has the Personal Security Manager
+    installed.</li>
+  <li>This might be due to a non-standard configuration on the server.</li>
+</ul>
+">
+
+<!ENTITY nssFailure2.title "Secure Connection Failed">
+<!ENTITY nssFailure2.longDesc2 "
+<ul>
+  <li>The page you are trying to view cannot be shown because the authenticity of the received data could not be verified.</li>
+  <li>Please contact the website owners to inform them of this problem.</li>
+</ul>
+">
+
+<!ENTITY certerror.longpagetitle1 "Your connection is not secure">
+<!-- Localization note (certerror.introPara) - The text content of the span tag
+will be replaced at runtime with the name of the server to which the user
+was trying to connect. -->
+<!ENTITY certerror.introPara "The owner of <span class='hostname'/> has configured their website improperly.  To protect your information from being stolen, &brandShortName; has not connected to this website.">
+
+<!ENTITY sharedLongDesc "
+<ul>
+  <li>The site could be temporarily unavailable or too busy. Try again in a few
+    moments.</li>
+  <li>If you are unable to load any pages, check your computer’s network
+    connection.</li>
+  <li>If your computer or network is protected by a firewall or proxy, make sure
+    that &brandShortName; is permitted to access the Web.</li>
+</ul>
+">
+
+<!ENTITY cspBlocked.title "Blocked by Content Security Policy">
+<!ENTITY cspBlocked.longDesc "<p>&brandShortName; prevented this page from loading in this way because the page has a content security policy that disallows it.</p>">
+
+<!ENTITY corruptedContentErrorv2.title "Corrupted Content Error">
+<!ENTITY corruptedContentErrorv2.longDesc "<p>The page you are trying to view cannot be shown because an error in the data transmission was detected.</p><ul><li>Please contact the website owners to inform them of this problem.</li></ul>">
+
+
+<!ENTITY securityOverride.exceptionButtonLabel "Add Exception…">
+
+<!ENTITY errorReporting.automatic2 "Report errors like this to help Mozilla identify and block malicious sites">
+<!ENTITY errorReporting.learnMore "Learn more…">
+
+<!ENTITY remoteXUL.title "Remote XUL">
+<!ENTITY remoteXUL.longDesc "<p><ul><li>Please contact the website owners to inform them of this problem.</li></ul></p>">
+
+<!ENTITY sslv3Used.title "Unable to Connect Securely">
+<!-- LOCALIZATION NOTE (sslv3Used.longDesc2) - Do not translate
+     "SSL_ERROR_UNSUPPORTED_VERSION". -->
+<!ENTITY sslv3Used.longDesc2 "Advanced info: SSL_ERROR_UNSUPPORTED_VERSION">
+
+<!-- LOCALIZATION NOTE (certerror.wrongSystemTime2,
+                        certerror.wrongSystemTimeWithoutReference) - The <span id='..' />
+     tags will be injected with actual values, please leave them unchanged. -->
+<!ENTITY certerror.wrongSystemTime2 "<p> &brandShortName; did not connect to <span id='wrongSystemTime_URL'/> because your computer’s clock appears to show the wrong time and this is preventing a secure connection.</p> <p>Your computer is set to <span id='wrongSystemTime_systemDate'/>, when it should be <span id='wrongSystemTime_actualDate'/>. To fix this problem, change your date and time settings to match the correct time.</p>">
+<!ENTITY certerror.wrongSystemTimeWithoutReference "<p>&brandShortName; did not connect to <span id='wrongSystemTimeWithoutReference_URL'/> because your computer’s clock appears to show the wrong time and this is preventing a secure connection.</p> <p>Your computer is set to <span id='wrongSystemTimeWithoutReference_systemDate'/>. To fix this problem, change your date and time settings to match the correct time.</p>">
+
+<!ENTITY certerror.pagetitle1  "Insecure Connection">
+<!ENTITY certerror.whatShouldIDo.badStsCertExplanation "This site uses HTTP
+Strict Transport Security (HSTS) to specify that &brandShortName; may only connect
+to it securely. As a result, it is not possible to add an exception for this
+certificate.">
+<!ENTITY certerror.copyToClipboard.label "Copy text to clipboard">
+
+<!ENTITY inadequateSecurityError.title "Your connection is not secure">
+<!-- LOCALIZATION NOTE (inadequateSecurityError.longDesc) - Do not translate
+     "NS_ERROR_NET_INADEQUATE_SECURITY". -->
+<!ENTITY inadequateSecurityError.longDesc "<p><span class='hostname'></span> uses security technology that is outdated and vulnerable to attack. An attacker could easily reveal information which you thought to be safe. The website administrator will need to fix the server first before you can visit the site.</p><p>Error code: NS_ERROR_NET_INADEQUATE_SECURITY</p>">
+
+<!ENTITY prefReset.longDesc "It looks like your network security settings might be causing this. Do you want the default settings to be restored?">
+<!ENTITY prefReset.label "Restore default settings">
+
+  <!ENTITY % globalDTD
+    SYSTEM "chrome://global/locale/global.dtd">
+  %globalDTD;
+]>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<html xmlns="http://www.w3.org/1999/xhtml" hasBrowserHandlers="true">
+  <head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Problem loading page</title>
+    <link rel="stylesheet" href="a_data/aboutNetError.css" type="text/css" media="all" />
+    <!-- If the location of the favicon is changed here, the FAVICON_ERRORPAGE_URL symbol in
+         toolkit/components/places/src/nsFaviconService.h should be updated. -->
+    <link rel="icon" type="image/png" id="favicon" href="chrome://global/skin/icons/warning-16.png" />
+
+    <script type="application/javascript"><![CDATA[
+      // The following parameters are parsed from the error URL:
+      //   e - the error code
+      //   s - custom CSS class to allow alternate styling/favicons
+      //   d - error description
+      //   captive - "true" to indicate we're behind a captive portal.
+      //             Any other value is ignored.
+
+      // Note that this file uses document.documentURI to get
+      // the URL (with the format from above). This is because
+      // document.location.href gets the current URI off the docshell,
+      // which is the URL displayed in the location bar, i.e.
+      // the URI that the user attempted to load.
+
+      let searchParams = new URLSearchParams(document.documentURI.split("?")[1]);
+
+      // Set to true on init if the error code is nssBadCert.
+      let gIsCertError;
+
+      function getErrorCode() {
+        return searchParams.get("e");
+      }
+
+      function getCSSClass() {
+        return searchParams.get("s");
+      }
+
+      function getDescription() {
+        return searchParams.get("d");
+      }
+
+      function isCaptive() {
+        return searchParams.get("captive") == "true";
+      }
+
+      function retryThis(buttonEl) {
+        // Note: The application may wish to handle switching off "offline mode"
+        // before this event handler runs, but using a capturing event handler.
+
+        // Session history has the URL of the page that failed
+        // to load, not the one of the error page. So, just call
+        // reload(), which will also repost POST data correctly.
+        try {
+          location.reload();
+        } catch (e) {
+          // We probably tried to reload a URI that caused an exception to
+          // occur;  e.g. a nonexistent file.
+        }
+
+        buttonEl.disabled = true;
+      }
+
+      function toggleDisplay(node) {
+        const toggle = {
+          "": "block",
+          "none": "block",
+          "block": "none"
+        };
+        return (node.style.display = toggle[node.style.display]);
+      }
+
+      function showCertificateErrorReporting() {
+        // Display error reporting UI
+        document.getElementById("certificateErrorReporting").style.display = "block";
+      }
+
+      function showPrefChangeContainer() {
+        const panel = document.getElementById("prefChangeContainer");
+        panel.style.display = "block";
+        document.getElementById("netErrorButtonContainer").style.display = "none";
+        document.getElementById("prefResetButton").addEventListener("click", function resetPreferences(e) {
+          const event = new CustomEvent("AboutNetErrorResetPreferences", {bubbles: true});
+          document.dispatchEvent(event);
+        });
+        addAutofocus("prefResetButton", "beforeend");
+      }
+
+      function setupAdvancedButton() {
+        // Get the hostname and add it to the panel
+        var panel = document.getElementById("badCertAdvancedPanel");
+        for (var span of panel.querySelectorAll("span.hostname")) {
+          span.textContent = document.location.hostname;
+        }
+
+        // Register click handler for the weakCryptoAdvancedPanel
+        document.getElementById("advancedButton")
+                .addEventListener("click", function togglePanelVisibility() {
+          toggleDisplay(panel);
+          if (gIsCertError) {
+            // Toggling the advanced panel must ensure that the debugging
+            // information panel is hidden as well, since it's opened by the
+            // error code link in the advanced panel.
+            var div = document.getElementById("certificateErrorDebugInformation");
+            div.style.display = "none";
+          }
+
+          if (panel.style.display == "block") {
+            // send event to trigger telemetry ping
+            var event = new CustomEvent("AboutNetErrorUIExpanded", {bubbles: true});
+            document.dispatchEvent(event);
+          }
+        });
+
+        if (!gIsCertError) {
+          return;
+        }
+
+        if (getCSSClass() == "expertBadCert") {
+          toggleDisplay(document.getElementById("badCertAdvancedPanel"));
+          // Toggling the advanced panel must ensure that the debugging
+          // information panel is hidden as well, since it's opened by the
+          // error code link in the advanced panel.
+          var div = document.getElementById("certificateErrorDebugInformation");
+          div.style.display = "none";
+        }
+
+        disallowCertOverridesIfNeeded();
+
+        document.getElementById("badCertTechnicalInfo").textContent = getDescription();
+      }
+
+      function disallowCertOverridesIfNeeded() {
+        var cssClass = getCSSClass();
+        // Disallow overrides if this is a Strict-Transport-Security
+        // host and the cert is bad (STS Spec section 7.3) or if the
+        // certerror is in a frame (bug 633691).
+        if (cssClass == "badStsCert" || window != top) {
+          document.getElementById("exceptionDialogButton").setAttribute("hidden", "true");
+        }
+        if (cssClass == "badStsCert") {
+          document.getElementById("badStsCertExplanation").removeAttribute("hidden");
+        }
+      }
+
+      function initPage() {
+        var err = getErrorCode();
+        gIsCertError = (err == "nssBadCert");
+        // Only worry about captive portals if this is a cert error.
+        let showCaptivePortalUI = isCaptive() && gIsCertError;
+        if (showCaptivePortalUI) {
+          err = "captivePortal";
+        }
+
+        // if it's an unknown error or there's no title or description
+        // defined, get the generic message
+        var errTitle = document.getElementById("et_" + err);
+        var errDesc  = document.getElementById("ed_" + err);
+        if (!errTitle || !errDesc) {
+          errTitle = document.getElementById("et_generic");
+          errDesc  = document.getElementById("ed_generic");
+        }
+
+        // eslint-disable-next-line no-unsanitized/property
+        document.querySelector(".title-text").innerHTML = errTitle.innerHTML;
+
+        var sd = document.getElementById("errorShortDescText");
+        if (sd) {
+          if (gIsCertError) {
+          // eslint-disable-next-line no-unsanitized/property
+            sd.innerHTML = errDesc.innerHTML;
+          } else {
+            sd.textContent = getDescription();
+          }
+        }
+        if (showCaptivePortalUI) {
+          initPageCaptivePortal();
+          return;
+        }
+        if (gIsCertError) {
+          initPageCertError();
+          return;
+        }
+        addAutofocus("errorTryAgain");
+
+        document.body.className = "neterror";
+
+        var ld = document.getElementById("errorLongDesc");
+        if (ld) {
+        // eslint-disable-next-line no-unsanitized/property
+          ld.innerHTML = errDesc.innerHTML;
+        }
+
+        if (err == "sslv3Used") {
+          document.getElementById("learnMoreContainer").style.display = "block";
+          let learnMoreLink = document.getElementById("learnMoreLink");
+          learnMoreLink.href = "https://support.mozilla.org/kb/how-resolve-sslv3-error-messages-firefox";
+          document.body.className = "certerror";
+        }
+
+        // remove undisplayed errors to avoid bug 39098
+        var errContainer = document.getElementById("errorContainer");
+        errContainer.remove();
+
+        var className = getCSSClass();
+        if (className && className != "expertBadCert") {
+          // Associate a CSS class with the root of the page, if one was passed in,
+          // to allow custom styling.
+          // Not "expertBadCert" though, don't want to deal with the favicon
+          document.documentElement.className = className;
+
+          // Also, if they specified a CSS class, they must supply their own
+          // favicon.  In order to trigger the browser to repaint though, we
+          // need to remove/add the link element.
+          var favicon = document.getElementById("favicon");
+          var faviconParent = favicon.parentNode;
+          faviconParent.removeChild(favicon);
+          favicon.setAttribute("href", "chrome://global/skin/icons/" + className + "_favicon.png");
+          faviconParent.appendChild(favicon);
+        }
+
+        if (err == "remoteXUL") {
+          // Remove the "Try again" button for remote XUL errors given that
+          // it is useless.
+          document.getElementById("netErrorButtonContainer").style.display = "none";
+        }
+
+        if (err == "cspBlocked") {
+          // Remove the "Try again" button for CSP violations, since it's
+          // almost certainly useless. (Bug 553180)
+          document.getElementById("netErrorButtonContainer").style.display = "none";
+        }
+
+        window.addEventListener("AboutNetErrorOptions", function(evt) {
+        // Pinning errors are of type nssFailure2
+          if (getErrorCode() == "nssFailure2") {
+            document.getElementById("learnMoreContainer").style.display = "block";
+            let learnMoreLink = document.getElementById("learnMoreLink");
+            // nssFailure2 also gets us other non-overrideable errors. Choose
+            // a "learn more" link based on description:
+            if (getDescription().includes("MOZILLA_PKIX_ERROR_KEY_PINNING_FAILURE")) {
+              learnMoreLink.href = "https://support.mozilla.org/kb/certificate-pinning-reports";
+            }
+
+            var options = JSON.parse(evt.detail);
+            if (options && options.enabled) {
+              var checkbox = document.getElementById("automaticallyReportInFuture");
+              showCertificateErrorReporting();
+              if (options.automatic) {
+                // set the checkbox
+                checkbox.checked = true;
+              }
+
+              checkbox.addEventListener("change", function(changeEvt) {
+                  var event = new CustomEvent("AboutNetErrorSetAutomatic",
+                    {bubbles: true,
+                     detail: changeEvt.target.checked});
+                  document.dispatchEvent(event);
+                });
+            }
+            const hasPrefStyleError = [
+              "interrupted", // This happens with subresources that are above the max tls
+              "SSL_ERROR_PROTOCOL_VERSION_ALERT",
+              "SSL_ERROR_UNSUPPORTED_VERSION",
+              "SSL_ERROR_NO_CYPHER_OVERLAP",
+              "SSL_ERROR_NO_CIPHERS_SUPPORTED"
+            ].some((substring) => getDescription().includes(substring));
+            // If it looks like an error that is user config based
+            if (getErrorCode() == "nssFailure2" && hasPrefStyleError && options && options.changedCertPrefs) {
+              showPrefChangeContainer();
+            }
+          }
+          if (getErrorCode() == "sslv3Used") {
+            document.getElementById("advancedButton").style.display = "none";
+          }
+        }, true, true);
+
+        var event = new CustomEvent("AboutNetErrorLoad", {bubbles: true});
+        document.dispatchEvent(event);
+
+        if (err == "inadequateSecurityError") {
+          // Remove the "Try again" button for HTTP/2 inadequate security as it
+          // is useless.
+          document.getElementById("errorTryAgain").style.display = "none";
+
+          var container = document.getElementById("errorLongDesc");
+          for (var span of container.querySelectorAll("span.hostname")) {
+            span.textContent = document.location.hostname;
+          }
+        }
+
+        addDomainErrorLinks();
+      }
+
+      function initPageCaptivePortal() {
+        document.body.className = "captiveportal";
+        document.title = document.getElementById("captivePortalPageTitle").textContent;
+
+        document.getElementById("openPortalLoginPageButton")
+                .addEventListener("click", () => {
+          let event = new CustomEvent("AboutNetErrorOpenCaptivePortal", {bubbles: true});
+          document.dispatchEvent(event);
+        });
+
+        addAutofocus("openPortalLoginPageButton");
+        setupAdvancedButton();
+
+        addDomainErrorLinks();
+
+        // When the portal is freed, an event is generated by the frame script
+        // that we can pick up and attempt to reload the original page.
+        window.addEventListener("AboutNetErrorCaptivePortalFreed", () => {
+          document.location.reload();
+        });
+      }
+
+      function initPageCertError() {
+        document.body.className = "certerror";
+        document.title = document.getElementById("certErrorPageTitle").textContent;
+        for (let host of document.querySelectorAll(".hostname")) {
+          host.textContent = document.location.hostname;
+        }
+
+        addAutofocus("returnButton");
+        setupAdvancedButton();
+
+        document.getElementById("learnMoreContainer").style.display = "block";
+
+        let checkbox = document.getElementById("automaticallyReportInFuture");
+        checkbox.addEventListener("change", function({target: {checked}}) {
+          document.dispatchEvent(new CustomEvent("AboutNetErrorSetAutomatic", {
+            detail: checked,
+            bubbles: true
+          }));
+        });
+
+        addEventListener("AboutNetErrorOptions", function(event) {
+          var options = JSON.parse(event.detail);
+          if (options && options.enabled) {
+            // Display error reporting UI
+            document.getElementById("certificateErrorReporting").style.display = "block";
+
+            // set the checkbox
+            checkbox.checked = !!options.automatic;
+          }
+        }, true, true);
+
+        let event = new CustomEvent("AboutNetErrorLoad", {bubbles: true});
+        document.getElementById("advancedButton").dispatchEvent(event);
+
+        addDomainErrorLinks();
+      }
+
+      /* Only do autofocus if we're the toplevel frame; otherwise we
+         don't want to call attention to ourselves!  The key part is
+         that autofocus happens on insertion into the tree, so we
+         can remove the button, add @autofocus, and reinsert the
+         button.
+      */
+      function addAutofocus(buttonId, position = "afterbegin") {
+        if (window.top == window) {
+            var button = document.getElementById(buttonId);
+            var parent = button.parentNode;
+            button.remove();
+            button.setAttribute("autofocus", "true");
+            parent.insertAdjacentElement(position, button);
+        }
+      }
+
+      /* Try to preserve the links contained in the error description, like
+         the error code.
+
+         Also, in the case of SSL error pages about domain mismatch, see if
+         we can hyperlink the user to the correct site.  We don't want
+         to do this generically since it allows MitM attacks to redirect
+         users to a site under attacker control, but in certain cases
+         it is safe (and helpful!) to do so.  Bug 402210
+      */
+      function addDomainErrorLinks() {
+        // Rather than textContent, we need to treat description as HTML
+        var sdid = gIsCertError ? "badCertTechnicalInfo" : "errorShortDescText";
+        var sd = document.getElementById(sdid);
+        if (sd) {
+          var desc = getDescription();
+
+          // sanitize description text - see bug 441169
+
+          // First, find the index of the <a> tags we care about, being
+          // careful not to use an over-greedy regex.
+          var codeRe = /<a id="errorCode" title="([^"]+)">/;
+          var codeResult = codeRe.exec(desc);
+          var domainRe = /<a id="cert_domain_link" title="([^"]+)">/;
+          var domainResult = domainRe.exec(desc);
+
+          // The order of these links in the description is fixed in
+          // TransportSecurityInfo.cpp:formatOverridableCertErrorMessage.
+          var firstResult = domainResult;
+          if (!domainResult)
+            firstResult = codeResult;
+          if (!firstResult)
+            return;
+          // Remove sd's existing children
+          sd.textContent = "";
+
+          // Everything up to the first link should be text content.
+          sd.appendChild(document.createTextNode(desc.slice(0, firstResult.index)));
+
+          // Now create the actual links.
+          if (domainResult) {
+            createLink(sd, "cert_domain_link", domainResult[1])
+            // Append text for anything between the two links.
+            sd.appendChild(document.createTextNode(desc.slice(desc.indexOf("</a>") + "</a>".length, codeResult.index)));
+          }
+          createLink(sd, "errorCode", codeResult[1])
+
+          // Finally, append text for anything after the last closing </a>.
+          sd.appendChild(document.createTextNode(desc.slice(desc.lastIndexOf("</a>") + "</a>".length)));
+        }
+
+        if (gIsCertError) {
+          // Initialize the error code link embedded in the error message to
+          // display debug information about the cert error.
+          var errorCode = document.getElementById("errorCode");
+          if (errorCode) {
+            errorCode.href = "javascript:void(0)";
+            errorCode.addEventListener("click", () => {
+              let debugInfo = document.getElementById("certificateErrorDebugInformation");
+              debugInfo.style.display = "block";
+              debugInfo.scrollIntoView({block: "start", behavior: "smooth"});
+            });
+          }
+        }
+
+        // Initialize the cert domain link.
+        var link = document.getElementById("cert_domain_link");
+        if (!link)
+          return;
+
+        var okHost = link.getAttribute("title");
+        var thisHost = document.location.hostname;
+        var proto = document.location.protocol;
+
+        // If okHost is a wildcard domain ("*.example.com") let's
+        // use "www" instead.  "*.example.com" isn't going to
+        // get anyone anywhere useful. bug 432491
+        okHost = okHost.replace(/^\*\./, "www.");
+
+        /* case #1:
+         * example.com uses an invalid security certificate.
+         *
+         * The certificate is only valid for www.example.com
+         *
+         * Make sure to include the "." ahead of thisHost so that
+         * a MitM attack on paypal.com doesn't hyperlink to "notpaypal.com"
+         *
+         * We'd normally just use a RegExp here except that we lack a
+         * library function to escape them properly (bug 248062), and
+         * domain names are famous for having '.' characters in them,
+         * which would allow spurious and possibly hostile matches.
+         */
+        if (okHost.endsWith("." + thisHost))
+          link.href = proto + okHost;
+
+        /* case #2:
+         * browser.garage.maemo.org uses an invalid security certificate.
+         *
+         * The certificate is only valid for garage.maemo.org
+         */
+        if (thisHost.endsWith("." + okHost))
+          link.href = proto + okHost;
+
+        // If we set a link, meaning there's something helpful for
+        // the user here, expand the section by default
+        if (link.href && getCSSClass() != "expertBadCert") {
+          toggleDisplay(document.getElementById("badCertAdvancedPanel"));
+          if (gIsCertError) {
+            // Toggling the advanced panel must ensure that the debugging
+            // information panel is hidden as well, since it's opened by the
+            // error code link in the advanced panel.
+            var div = document.getElementById("certificateErrorDebugInformation");
+            div.style.display = "none";
+          }
+        }
+      }
+
+      function createLink(el, id, text) {
+        var anchorEl = document.createElement("a");
+        anchorEl.setAttribute("id", id);
+        anchorEl.setAttribute("title", text);
+        anchorEl.appendChild(document.createTextNode(text));
+        el.appendChild(anchorEl);
+      }
+    ]]></script>
+  </head>
+
+  <body dir="ltr" class="neterror">
+    <!-- Contains an alternate page title set on page init for cert errors. -->
+    <div id="certErrorPageTitle" style="display: none;">Insecure Connection</div>
+    <div id="captivePortalPageTitle" style="display: none;">Log in to network</div>
+
+    <!-- ERROR ITEM CONTAINER (removed during loading to avoid bug 39098) -->
+    
+
+    <!-- PAGE CONTAINER (for styling purposes only) -->
+    <div id="errorPageContainer" class="container">
+      <!-- Error Title -->
+      <div class="title">
+        <h1 class="title-text">Server not found</h1>
+      </div>
+
+      <!-- LONG CONTENT (the section most likely to require scrolling) -->
+      <div id="errorLongContent">
+
+        <!-- Short Description -->
+        <div id="errorShortDesc">
+          <p id="errorShortDescText">Firefox can’t find the server at ad.clearbluemedia.com.</p>
+        </div>
+        <p id="badStsCertExplanation" hidden="true">This site uses HTTP
+Strict Transport Security (HSTS) to specify that Firefox may only connect
+to it securely. As a result, it is not possible to add an exception for this
+certificate.</p>
+
+        <div id="wrongSystemTimePanel" style="display: none;">
+          <p> Firefox did not connect to <span id="wrongSystemTime_URL"></span> because your computer’s clock appears to show the wrong time and this is preventing a secure connection.</p> <p>Your computer is set to <span id="wrongSystemTime_systemDate"></span>, when it should be <span id="wrongSystemTime_actualDate"></span>. To fix this problem, change your date and time settings to match the correct time.</p>
+        </div>
+
+        <div id="wrongSystemTimeWithoutReferencePanel" style="display: none;">
+          <p>Firefox did not connect to <span id="wrongSystemTimeWithoutReference_URL"></span> because your computer’s clock appears to show the wrong time and this is preventing a secure connection.</p> <p>Your computer is set to <span id="wrongSystemTimeWithoutReference_systemDate"></span>. To fix this problem, change your date and time settings to match the correct time.</p>
+        </div>
+
+        <!-- Long Description (Note: See netError.dtd for used XHTML tags) -->
+        <div id="errorLongDesc">
+<ul xmlns="http://www.w3.org/1999/xhtml">
+  <li>Check the address for typing errors such as
+    <strong>ww</strong>.example.com instead of
+    <strong>www</strong>.example.com</li>
+  <li>If you are unable to load any pages, check your computer’s network
+    connection.</li>
+  <li>If your computer or network is protected by a firewall or proxy, make sure
+    that Firefox is permitted to access the Web.</li>
+</ul>
+</div>
+
+        <div id="learnMoreContainer">
+          <p><a href="https://support.mozilla.org/kb/what-does-your-connection-is-not-secure-mean" id="learnMoreLink" target="new">Learn more…</a></p>
+        </div>
+
+        <!-- UI for option to report certificate errors to Mozilla. Removed on
+             init for other error types .-->
+        <div id="certificateErrorReporting">
+          <p class="toggle-container-with-text">
+            <input id="automaticallyReportInFuture" role="checkbox" type="checkbox" />
+            <label for="automaticallyReportInFuture" id="automaticallyReportInFuture">Report errors like this to help Mozilla identify and block malicious sites</label>
+          </p>
+        </div>
+
+        <div id="prefChangeContainer" class="button-container">
+          <p>It looks like your network security settings might be causing this. Do you want the default settings to be restored?</p>
+          <button id="prefResetButton" class="primary" autocomplete="off">Restore default settings</button>
+        </div>
+
+        <div id="certErrorAndCaptivePortalButtonContainer" class="button-container">
+          <button id="returnButton" class="primary" autocomplete="off">Go Back</button>
+          <button id="openPortalLoginPageButton" class="primary" autocomplete="off">Open Network Login Page</button>
+          <button id="advancedButton" autocomplete="off">Advanced</button>
+        </div>
+      </div>
+
+      <div id="netErrorButtonContainer" class="button-container">
+        <button id="errorTryAgain" class="primary" autocomplete="off" onclick="retryThis(this);">Try Again</button>
+      </div>
+
+      <div id="advancedPanelContainer">
+        <div id="badCertAdvancedPanel" class="advanced-panel">
+          <p id="badCertTechnicalInfo"></p>
+          <div class="exceptionDialogButtonContainer">
+            <button id="exceptionDialogButton">Add Exception…</button>
+          </div>
+        </div>
+
+        <div id="certificateErrorDebugInformation">
+          <button id="copyToClipboard">Copy text to clipboard</button>
+          <div id="certificateErrorText"></div>
+          <button id="copyToClipboard">Copy text to clipboard</button>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    - Note: It is important to run the script this way, instead of using
+    - an onload handler. This is because error pages are loaded as
+    - LOAD_BACKGROUND, which means that onload handlers will not be executed.
+    -->
+    <script type="application/javascript">
+      initPage();
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,896 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="jgs">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.06 [en] (Win98; U) [Netscape]">
+   <TITLE>ASCII Art Tutorial- Norman Veilleux</TITLE>
+</HEAD>
+<BODY TEXT="#FFFFFF" BGCOLOR="#000000" LINK="#8080FF" VLINK="#009900" ALINK="#CC33CC" BACKGROUND="nitegreen2.jpg" BGPROPERTIES="fixed">
+
+<CENTER><PRE><STYLE>
+<!--
+      A:link {text-decoration: none}
+      A:visited {text-decoration: none}
+      A:active {text-decoration: underline; color: #AC80FF}
+      A:hover {color: #A601FE; text-decoration: underline}
+-->
+</STYLE>
+<A NAME="top"></A><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<CENTER><B><I><FONT COLOR="#8080FF"><FONT SIZE=+3>Normand Veilleux's ASCII
+Art Tutorial</FONT></FONT></I></B></CENTER>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<CENTER><TABLE>
+<TR>
+<TD>
+<PRE><B>From: Normand Veilleux &lt;nveilleu@emr1.emr.ca>
+
+Date: Tue, 11 Jan 1994 12:18:52 -0500 (EST)
+
+Several people have asked me how I do what I do (smoothing out
+pictures,&nbsp; etc.)&nbsp; First, I would like to say that I am a complete
+beginner myself.&nbsp; I had no drawing experience before Dec 11, 1993.
+At that time someone posted an ascii picture of Meriday (a
+professionally drawn nude, I think).&nbsp; I found that picture a lot
+more appealing than the GIFs I have seen or the mainframe pictures
+from my University years.&nbsp; Those tend to be hard the eyes from
+close up.
+
+Anyway, when someone else posted another nude that (I'm guessing
+here) was a cleaned up GIF.&nbsp; I immediately saw there was lots of
+room for improvement and I decided to give it a try.&nbsp; The only
+tools I had at my disposal were a PC with WordPerfect.&nbsp; The big
+advantage I saw with WP was that I could toggle between a normal
+view of the picture and a reduced version since WP allowed me to
+view a full page of text at once on the screen.
+
+In reduced format the text is actually transferred in graphics so
+that an '8' would actually appear as a black square.&nbsp; This gave the
+picture a rough look; the edges were all jagged.&nbsp; But, by
+experimenting with various character changes I soon realized that
+I could smooth out those jagged edges.&nbsp; I spent a lot of time
+flipping back and forth between the normal and the reduced views.
+
+Oh, one thing I forgot to mention.&nbsp; When I changed the font from
+"Courrier 10" to "Line Printer 16.67 cpi" for the LaserJet printer,
+I noticed that the jagged flaws appeared even more pronounced.
+This is why you'll see me mention once in a while that "the
+drawings I post are at their best when printed with 'Line Printer
+16.67 cpi' font or equivalent."&nbsp; They were worked on using that
+font.&nbsp; They still look very good in a regular font
+though.&nbsp; That's the beauty of it all.
+
+I still do the same thing now, only a little faster.&nbsp; It is a time
+consuming process and I see potential to automate some, if not a
+large portion of it.&nbsp; I have asked a few people on the NET if they
+knew of any software that could lighten or darken an ascii picture,
+reduce or enlarge it, etc.&nbsp; So far, no luck.
+
+I took a 15 hour bus ride (double it for the return trip) during
+the Christmas holidays up to Kapuskasing where my parents live.&nbsp; So
+I had some time to think about things.&nbsp; I came up with pseudocode
+for a program to lighten and darken a picture automatically.&nbsp; That
+is, if the picture is dark, it will lighten it and vice versa
+without any cumbersome parameters of any sort.&nbsp; It's extremely
+simple when you think about it for 3 to 4 hours.&nbsp; I haven't had the
+chance to program any of it yet but given a week or two it will be
+implemented.
+
+I also wrote pseudocode for flipping a picture horizontally, and
+for reducing and enlarging one.&nbsp; These were not quite as simple but
+it looks like it can work.&nbsp; If any of you out there know of
+programs that do just that already please let me know ASAP.&nbsp; You'll
+save me a lot of time.
+
+Thank's a million.
+
+I hope these "tips" have entertained as much as enlightened you.
+Like a person I use to listen to on radio often said "When I learn
+something during the day I go to bed at night less ignorant."
+
+And so it has been for me a joy to learn how to draw.
+
+
+
+From: Nveilleu@emr1.emr.ca (Normand Veilleux)
+Date: Sat Jan 08 16:08:26 CST 1994
+
+
+I have received a few requests to explain the "logic" behind the
+smoothing.&nbsp; So far I have only explained what tools I use to create
+it (flipping back and forth from normal to reduced view in
+WordPerfect).&nbsp; I will try to give here the same explanation I gave
+the first student who asked.&nbsp; Since I did not save that discussion
+this one will be slightly different.
+
+The whole thing is visual as you could have guessed.&nbsp; So, the best
+way I know to show you what I mean is by giving an example:
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; Take this&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Doesn't this
+&nbsp;&nbsp;&nbsp;&nbsp; for example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; look smoother?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yb
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yb
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y8a,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `"Y888
+
+
+BTW, that reminds me of a quote I saw not too long ago:&nbsp; "A truly
+wise person does not play leapfrog with a rhinoceros"&nbsp; :-)
+
+I consider the "smoothing problem" as nothing more than a "weight
+distribution problem".&nbsp; By shifting up the pixel density of an 8
+with characters such as P, Y, ", etc., where necessary, and by
+shifting down the pixel density of an 8 with characters such as b,
+d, a, etc., where necessary, the graphic takes on a smoother look.
+
+May sound simple when it's explained like that but I don't know
+where to start to program it.&nbsp; I'll start with easier stuff first,
+like flipping a picture horizontally.&nbsp; That's kids stuff.&nbsp; I used
+a semi-manual technique when I had to flip my ascii face around.
+The picture I had drawn was a mirror image, so it had to be flipped
+to look right.&nbsp; I created two small macros (less than 10 commands
+each) in WordPerfect which did the bulk of the work.&nbsp; After that
+all I needed to do was about 20 global search and replaces.&nbsp; It
+took about 5 - 10 minutes total.&nbsp; It would have taken hours to
+retype it in reverse or to write a program to do it.
+
+Since I don't have access to a scanner, but I sometimes want to
+take a picture from paper and draw it in ascii I developed a GRID
+technique to help me out.&nbsp; Anyone who wants to give it a try needs
+to create the grid electronically and then print it.&nbsp; Here is how
+it works.&nbsp; Start with the following grid:
+
+1.2.3.4.5.
+2.A.B.C.D.
+3.E.F.G.H.
+4.I.J.K.L.
+5.M.N.O.P.
+
+The dots can actually be replaced by spaces, so create the grid
+using your preference.
+
+Then, copy the whole grid horizontally until you fill all the width
+of the paper size you want to use.&nbsp; And then, copy this new grid as
+many times as needed to fill the length of the page.&nbsp; You will end
+up with something along these lines (with spaces):
+
+
+1 2 3 4 5 1 2 3 4 5 1 2 3 4 5
+2 A B C D 2 A B C D 2 A B C D
+3 E F G H 3 E F G H 3 E F G H
+4 I J K L 4 I J K L 4 I J K L
+5 M N O P 5 M N O P 5 M N O P
+1 2 3 4 5 1 2 3 4 5 1 2 3 4 5
+2 A B C D 2 A B C D 2 A B C D
+3 E F G H 3 E F G H 3 E F G H
+4 I J K L 4 I J K L 4 I J K L
+5 M N O P 5 M N O P 5 M N O P
+
+
+Now, get a printed copy of that grid and put it aside for a bit.
+
+BTW, this technique works best with pictures that are about 1/4 of
+an 8 1/2 x 11 piece of paper.&nbsp; Larger pictures can also be done but
+are cumbersome and time consuming.&nbsp; That is how I created three
+ascii pictures so far:&nbsp; the hand that showed "that close", the ying
+yang, and my own face.&nbsp; The toughest thing about the face was to
+draw it on paper first.
+
+At this stage you need to find a picture that is reasonably simple
+in terms of complexity :-)&nbsp; In other words not too detailed; the
+coarser the better.&nbsp; Something taken from a colouring book would
+probably be an excellent choice (although I have not used any
+myself yet).&nbsp; You may need to "modify" the picture so that it will
+also "cooperate" to the process (especially if taken from a
+photograph or other source).
+
+With a photocopier, enlarge or reduce the picture so that it is
+close to the best size (as stated above).&nbsp; Then, use a wide black
+marker to "highlight" the lines and contours (this may not be
+necessary if the picture came from a colouring book).&nbsp; If there is
+a background image that you want to remove, just cut and tape white
+paper over those areas or just cut out the undesired areas.&nbsp; This
+is important since the "junk" you would otherwise leave in would
+eventually interfere with the grid.
+
+When the lines are all really dark and just about all the
+background has been removed you can photocopy the new picture on
+the grid.&nbsp; You may have to experiment a few times to get the
+picture to come out the same as the original on an upside up grid.
+
+When you have such an image you can now bring up the electronic
+grid.&nbsp; Work at it from left to right and from top to bottom.&nbsp; Put
+your word processor on typeover and space over the characters of
+the first line until you get to a character that is partially or
+completely covered by a dark line on the paper grid.&nbsp; Use the 1 to
+5 and the A to P to locate the correct position.&nbsp; When you get to
+such a character, try to find a character that resembles the shape
+of the line and type that in.&nbsp; Ex: '8' for a character that is
+totally covered, 'a' for a character that has the bottom half
+covered, etc.&nbsp; This is actually starting the smoothing process at
+the same time you are converting from paper to screen.&nbsp; Remember
+that shading complicates things unnecessarily, so ignore it
+completely.
+
+Repeat this process for all the lines of the grid until the picture
+is completely transferred to electronic form.&nbsp; You don't need to be
+an artist do this.&nbsp; You just need to have some time on your hands.
+
+Of course at this point the ascii picture is still slightly rough,
+but at least you have the right proportions, etc.&nbsp; Now you could
+try to smooth it out by using the "weight distribution" technique
+described above and perhaps a printed version of one of the ascii
+pictures I have smoothed (for concrete examples).
+
+It may sound very complicated at first, but just to give you an
+example, the ying yang I did (a few people informed me that I had
+forgotten the eyes):
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .,ad88888888baa,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d8P"""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ""9888ba.
+&nbsp;&nbsp;&nbsp;&nbsp; .a8"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ad88888888888a
+&nbsp;&nbsp;&nbsp; aP'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88888888888888888a
+&nbsp; ,8"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88888888888888888888,
+&nbsp;,8'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (888888888( )888888888,
+,8'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `8888888888888888888888
+8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `888888888888888888888,
+8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "8888888888888888888)
+8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `888888888888888888)
+8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "8888888888888888
+(b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "88888888888888'
+`8,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8888888888888)
+&nbsp;"8a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,888888888888)
+&nbsp;&nbsp; V8,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d88888888888"
+&nbsp;&nbsp;&nbsp; `8b,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d8888888888P'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `V8a,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ad8888888888P'&nbsp; Normand
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ""88888888888888888P"&nbsp;&nbsp;&nbsp;&nbsp; Veilleux
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; """"""""""""
+
+took just over half an hour using that technique.&nbsp; I hope a few of
+you will be interested enough to try it out.&nbsp; If you do, let us
+know how it goes.
+
+
+EXPERIMENT:&nbsp;&nbsp;&nbsp; Would someone with access to a scanner and the
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GIF2ASC program (or an OCR) try the following:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; take a picture from a colouring book, scan it and
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; then convert it to ascii.&nbsp; Alternatively, tell your
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scanner that what you are scanning is text, if you
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; have an OCR.&nbsp; I am under the impression that the
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; results would be quite presentable.&nbsp; Of course,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sometimes theory and practice differ considerably.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Please post your findings.
+
+
+
+From: Normand Veilleux &lt;nveilleu@emr1.emr.ca>
+Date: 27 Jun 1994 20:26:35 -0500
+
+
+
+I have seen several ascii versions of the Mona Lisa circulating in
+alt.ascii-art but I was not happy with any of them.&nbsp; They all
+appeared to be converted GIFs and even the best one, which was
+distinctly superior to all the others, only looked decent when I
+stood back at least 5 feet from it.&nbsp; It also had the drawback of
+being stretched vertically.&nbsp; So I decided to make my own.
+
+I also wanted to take this opportunity to give a concrete example
+of how the special grid technique that I use, accelerates and
+simplifies the creation of many ASCII drawings.&nbsp; I wanted to
+explain, as much as possible, what was involved in drawing by
+"hand" the ASCII version of a relatively complex picture while
+starting from scratch.
+
+I have described the grid technique in a previous post (in Jan.
+'94), but a recapitulation is necessary before going any further.&nbsp;
+Basically, the grid was nothing more than a series of characters
+that filled up the area taken by the drawing.&nbsp; I realized that the
+characters composing the grid would be more useful if they were
+chosen to help pinpoint where a particular portion of the drawing
+was located within the grid.
+
+There was many ways of doing this, but I opted for the following
+rectangle (10 x 5 characters):
+
+1.2.3.4.5.
+2.A.B.C.D.
+3.E.F.G.H.
+4.I.J.K.L.
+5.M.N.O.P.
+
+This rectangle was then replicated horizontally and vertically
+until an area the size of an 8.5" x 11" page was filled up.&nbsp; I
+later decided to replace the periods by spaces to "lighten" the
+grid.&nbsp; This created an electronic grid which looked like this:
+
+1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4
+2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C
+3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G
+4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K
+5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O
+1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4
+2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C
+3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G
+4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K
+5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O
+
+The characters 1 to 5 produced horizontal and vertical guidelines.&nbsp;
+With these guidelines, I could quickly locate the approximate area
+of the grid that I wanted to work on.&nbsp; To pinpoint the exact
+location, I relied on the letters A to P which appeared only once
+inside each rectangle.
+
+Of course, the electronic grid alone was not very useful until I
+could somehow relate it to the drawing.&nbsp; To do so, I printed out
+the grid and then photocopied it on an acetate for reusability.&nbsp;
+Then, whenever I wanted to work on a picture, I taped a photocopy
+of it to the back of the acetate and brought up the electronic grid
+on the screen.&nbsp; By the intermediary of the grid, I automatically
+had a relationship between the picture on paper and the screen.
+
+TIP: If you ever print a grid on an acetate, make sure to cover the
+&nbsp;&nbsp;&nbsp;&nbsp; acetate with clear tape afterwards to prevent your fingers
+&nbsp;&nbsp;&nbsp;&nbsp; from eroding the toner.&nbsp; I learned the hard way.
+
+
+Now, back to Mona.&nbsp; You may find the discussion a little difficult
+to follow at times without a picture, so either find a copy of the
+Mona Lisa or print out this file.
+
+In search of a decent reproduction of the Mona Lisa I went to the
+closest library and found an excellent example on page 25 of the
+book "Leonard de Vinci" published by McGraw-Hill in 1974.&nbsp; The
+picture measured about 9.5" x 12" and was in full colour.
+
+Next, I photocopied the picture.&nbsp; The lowest darkness setting gave
+the best result, but was still a little bit too dark in certain
+areas to distinguish some of the lines.&nbsp; Before addressing that
+problem, I decided to cut the photocopy so that the resulting
+picture could fit in 55 lines by 78 columns.&nbsp; This was
+approximately double the height of the head and was wide enough to
+show a large portion of both shoulders.
+
+To make the barely discernable lines more visible, I highlighted
+them with a blue pen.&nbsp; I made sure to draw those lines about one
+sixteenth of an inch thick so they would be clearly visible.&nbsp;
+Experience had taught me that very fine lines were often too
+difficult to distinguish from a dark background once the grid was
+superimposed on the picture.&nbsp; The affected lines were:&nbsp; the lines
+between veil and hair, hair and background, chin and throat, and
+the lines on each side of the face and on each side of the arched
+garment extending to her left shoulder (referred to as the shawl in
+the rest of this document).&nbsp; While I was at it, I also highlighted
+the contours of the lips, nose and eyes in the same manner.&nbsp; I then
+taped the touched up photocopy behind the acetate which had the
+grid.
+
+The next step was to load the electronic version of the grid in my
+favourite word processor (WordPerfect).&nbsp; Before starting work, I
+decided to represent the dark areas of the picture with an "8" (I'm
+sure you guessed that), the shawl with an "I" and the veil with an
+"8" if it was covering any hair and with an "I" if it was not (or
+to show its border in the hair).&nbsp; I chose those characters since
+they contrasted very well:&nbsp; it was easy to distinguish a line of
+I's in an area filled with 8's.
+
+Then, I determined which character of the acetate corresponded to
+the top of her left shoulder and located that character on the
+electronic grid.&nbsp; While holding the acetate in my left hand and
+marking my position on it with my thumb, I delimited the contour
+(only one character wide) around the bottom of the picture (counter
+clockwise) up to her right shoulder by replacing the characters of
+the grid with 8's except for the ends of the shawl which needed
+I's.
+
+I then continued up the picture, line by line, while overwriting
+the grid's characters with spaces until I got to the first
+character delimiting the border of Mona's hair or veil, as
+determined from the acetate.&nbsp; At that point, I typed one of four
+characters: "8", "d", "`" or "," depending on which one
+corresponded best to the dark portion of the picture at that
+location on the acetate.&nbsp; I then typed two more 8's and a space;
+just enough to define the contour.&nbsp; Of course, when I was in the
+area where the veil was the first thing to be reached I used I's
+instead of 8's.
+
+I repeated that process for each line until I reached the top of
+the head.&nbsp; There, I decided to follow the inside line of the hair
+while going down the right side of the picture.&nbsp; So, I first
+started by defining the hair line on the forehead and filling the
+top of the head with 8's.&nbsp; Then, starting at the inside line for
+the hair I typed 8's until I reached the other side of the hair and
+then added a "b" or a "," if necessary.&nbsp; I also made sure to drop
+an "I" along the way at the exact location where I had shown the
+veil to start covering the hair (it was a blue line on the
+photocopy).&nbsp; I continued this, line by line, until I reached the
+top of the shawl.
+
+So, half an hour after loading the grid I was at this stage:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _______
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,,ad8888888888bba,_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,8888888888888888888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,888888888888888888888888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,8888888888888888888888888888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d88888PP"""""""YY888888888888888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88&nbsp; A B C D 2 A B C D 2 ""Y8888888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II 3 E F G H 3 E F G H 3 E&nbsp; IIII8888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II&nbsp; 4 I J K L 4 I J K L 4 I J `888III8888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II&nbsp; P 5 M N O P 5 M N O P 5 M N&nbsp; `888888I888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4&nbsp; `888888I8888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II&nbsp; C D 2 A B C D 2 A B C D 2 A B C D 8888888I8888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; G H 3 E F G H 3 E F G H 3 E F G H `8888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; K L 4 I J K L 4 I J K L 4 I J K L&nbsp; 88888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; O P 5 M N O P 5 M N O P 5 M N O P&nbsp; 88888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 ,888888888I88b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II B C D 2 A B C D 2 A B C D 2 A B C D 8888888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8 F G H 3 E F G H 3 E F G H 3 E F G H 8888888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II&nbsp; J K L 4 I J K L 4 I J K L 4 I J K L 8888888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; N O P 5 M N O P 5 M N O P 5 M N O P 88888888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 88888888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; B C D 2 A B C D 2 A B C D 2 A B C D 88888888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; F G H 3 E F G H 3 E F G H 3 E F G H 88888888888I8888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; J K L 4 I J K L 4 I J K L 4 I J K L 88888888888I8888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; N O P 5 M N O P 5 M N O P 5 M N O P 88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II&nbsp; B C D 2 A B C D 2 A B C D 2 A B C D 88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8 F G H 3 E F G H 3 E F G H 3 E F G H 8888888888I888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II J K L 4 I J K L 4 I J K L 4 I J K L 8888888888I888888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II&nbsp; O P 5 M N O P 5 M N O P 5 M N O P 8888888888I8888888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 `888888888I8888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; D 2 A B C D 2 A B C D 2 A B C D&nbsp; 888888888I88888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II G H 3 E F G H 3 E F G H 3 E F G H&nbsp; `88888888I888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8 K L 4 I J K L 4 I J K L 4 I J K L 4 88888888I8888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8 O P 5 M N O P 5 M N O P 5 M N O P 5 88888888I888888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II&nbsp; 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 `8888888I88888888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8&nbsp; C D 2 A B C D 2 A B C D 2 A B C D 2&nbsp; 8888888I888888888888888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II F G H 3 E F G H 3 E F G H 3 E F G H 3 ,8888888I8888888888888888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88&nbsp; J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N I
+&nbsp;&nbsp;&nbsp; ,88 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 I
+&nbsp; ,88 C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B I
+&nbsp;,88&nbsp; G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F I
+d88 J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J I
+8 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N 8
+8 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 8
+8 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B 8
+8 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F 8
+8 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J 8
+8 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N O P 5 M N 8
+8 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 8
+8 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B C D 2 A B 8
+8 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F G H 3 E F 8
+8 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J K L 4 I J 8
+8888888888888888888888888888888IIIIIIIIIIIIII88888888888888888888888888888888
+
+Here, it seemed appropriate to fill in the shawl with I's which
+automatically led to filling in the bottom right corner with 8's
+and adding my name.&nbsp; I then completed the small portion of hair at
+the top of the shawl.&nbsp; Then, I defined the upper portion of the
+garment, beside the veil, and filled in the section below that with
+8's.&nbsp; Next, I filled the rest of the hair (on the left side of the
+picture) with 8's while defining the hair's inside line.&nbsp; I also
+filled in, with spaces, the area of skin from the top of the
+garment up to the throat.&nbsp; Next, I drew the veil on the forehead
+and filled in the rest of the forehead with spaces.&nbsp; And finally I
+smoothed all the lines drawn so far, leaving the face for last.
+
+So, after one hour of work I was at this stage:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _______
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,,ad8888888888bba,_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ad88888I888888888888888ba,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88888888I88888888888888888888a,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d888888888I8888888888888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d88888PP"""" ""YY88888888888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d88"'__,,--------,,,,._ ""Y8888888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,8II-'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "```IIII8888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,I88'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Y88III8888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II88I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Y88888I888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `888888I8888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II8888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y888888I8888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `8888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888, 4 I J K L 4 I J K L 4 I J K L&nbsp; 88888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888I 5 M N O P 5 M N O P 5 M N O P&nbsp; 88888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888' 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 ,888888888I88I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II88888&nbsp; 2 A B C D 2 A B C D 2 A B C D d888888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; III88888, 3 E F G H 3 E F G H 3 E F G H 8888888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,III88888I 4 I J K L 4 I J K L 4 I J K L 8888888888I888I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; III888888I 5 M N O P 5 M N O P 5 M N O P 88888888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888888,&nbsp; 2 3 4 5 1 2 3 4 5 1 2 3 4 5 88888888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888888I&nbsp; A B C D 2 A B C D 2 A B C D 88888888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]I888888888, E F G H 3 E F G H 3 E F G H 88888888888I8888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888I I J K L 4 I J K L 4 I J K L 88888888888I8888I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8888888888b&nbsp; N O P 5 M N O P 5 M N O P 88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888a&nbsp; 4 5 1 2 3 4 5 1 2 3 4 5 88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II8888888888888b, D 2 A B C D 2 A B C D 88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888888ba,_ E F G H 3 E F G H 8888888888I888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II88888888888888888b I J K L 4 I J K L I888888888I888888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II88888888888888888 M N O P 5 M N O P I888888888I8888888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II8888888888888888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `888888888I8888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8888888888888888,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y88888888I8888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II8888888888888888b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `88888888I88888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888888P"I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888888I8888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888P"&nbsp;&nbsp; `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y8888888I88888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888888888P"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `8888888I8888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8888888I888888888888888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888888888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,8888888I8888888888888888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d88888888888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d888888I8888888888IIIIIII
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ad888888888888I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8888888I8888IIIIIIIIIIIII
+&nbsp;&nbsp;&nbsp; ,d888888888888888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 888888IIIIIIIIIIIIIIIIIII
+&nbsp; ,d888888888888P'8P'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y888IIIIIIIIIIIIIIIIIIIII
+&nbsp;,8888888888888,&nbsp; "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,IIIIIIIIIIIIIIIIIIIIIIII
+d888888888888888,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,IIIIIIIIIIIIIIIIIIIIIIIIIII
+888888888888888888a,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,IIIIIIIIIIIIIIIIIIII888888888
+888888888888888888888ba,_d'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,IIIIIIIIIIIIIIIII88888888888888
+8888888888888888888888888888bbbaaa,,,______,IIIIIIIIIIIIIII888888888888888888
+88888888888888888888888888888888888888888IIIIIIIIIIIIIII888888888888888888888
+8888888888888888888888888888888888888888IIIIIIIIIIIIII88888888888888888888888
+888888888888888888888888888888888888888IIIIIIIIIIIIII888888888888888888888888
+8888888888888888888888888888888888888IIIIIIIIIIIIII88888888888888888888888888
+88888888888888888888888888888888888IIIIIIIIIIIIII8888888888888888888888888888
+8888888888888888888888888888888888IIIIIIIIIIIIII88888888888888888 Normand&nbsp; 88
+88888888888888888888888888888888IIIIIIIIIIIIII8888888888888888888 Veilleux 88
+8888888888888888888888888888888IIIIIIIIIIIIII88888888888888888888888888888888
+
+I found the shawl to be much too pale in comparison to the rest of
+the garment, so I tried replacing the I's with darker characters
+such as M, H, A, etc.&nbsp;&nbsp; Unfortunately, even though I could see the
+difference on the screen reasonably well, I could not see any
+difference between those characters and the surrounding 8's when I
+used the reduced view feature of WordPerfect.&nbsp; I have been using
+this feature to view an entire page at a time on the screen.&nbsp; It's
+only when I tried a 'Z' that I was able to distinguish between the
+two characters in the reduced view.&nbsp; So, 'Z' had my vote.
+
+I then worked on the face for about half an hour, defining the
+mouth, nose, eyes, etc.&nbsp; I tried my preferred style first, but it
+looked awful so I tried line draw instead without any more success.&nbsp;
+Nothing seemed to work, so I reverted back to my preferred style of
+ASCII drawing and to be true to it I did not add any shading to the
+face.
+
+This was how the picture looked at that stage:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _______
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,,ad8888888888bba,_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ad88888I888888888888888ba,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88888888I88888888888888888888a,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d888888888I8888888888888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d88888PP"""" ""YY88888888888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d88"'__,,--------,,,,._ ""Y8888888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,8II-'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "```IIII8888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,I88'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Y88III8888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II88I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Y88888I888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `888888I8888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II8888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y888888I8888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `8888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888,&nbsp;&nbsp; .aag,&nbsp;&nbsp;&nbsp; ,gaaP""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888I&nbsp;&nbsp;&nbsp; ___"b&nbsp; d"&nbsp;&nbsp;&nbsp; ____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888'&nbsp; &lt;^I88>I&nbsp; I&nbsp;&nbsp; &lt;^I888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,888888888I88I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II88888&nbsp; . `""" I&nbsp; I&nbsp;&nbsp;&nbsp; `""" .&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d888888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; III88888,&nbsp; ````&nbsp;&nbsp;&nbsp;&nbsp; b&nbsp;&nbsp;&nbsp;&nbsp; ''''&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8888888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,III88888I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8888888888I888I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; III888888I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,&nbsp;&nbsp; \,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888888,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I'&nbsp;&nbsp;&nbsp; "I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888888I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `"baad"'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88888888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]I888888888,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,P88888888888I8888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888I&nbsp;&nbsp;&nbsp; "Y88bd888P"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d" 88888888888I8888I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8888888888b&nbsp;&nbsp;&nbsp;&nbsp; `"""""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,8"&nbsp; ,88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,P"'&nbsp;&nbsp; ,d88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II8888888888888b,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,d"'&nbsp;&nbsp;&nbsp; ,aP"88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888888ba,__,,ad""&nbsp;&nbsp;&nbsp; _,aP"&nbsp;&nbsp; 8888888888I888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II88888888888888888b"ba,,,,aadP"'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I888888888I888888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II88888888888888888&nbsp; `""""'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I888888888I8888888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II8888888888888888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `888888888I8888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8888888888888888,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y88888888I8888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II8888888888888888b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `88888888I88888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888888P"I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888888I8888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888P"&nbsp;&nbsp; `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y8888888I88888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888888888P"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `8888888I8888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8888888I888888888888888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888888888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,8888888I8888888888888888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d88888888888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d888888I8888888888ZZZZZZZ
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ad888888888888I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8888888I8888ZZZZZZZZZZZZZ
+&nbsp;&nbsp;&nbsp; ,d888888888888888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 888888IZZZZZZZZZZZZZZZZZZ
+&nbsp; ,d888888888888P'8P'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y888ZZZZZZZZZZZZZZZZZZZZZ
+&nbsp;,8888888888888,&nbsp; "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ZZZZZZZZZZZZZZZZZZZZZZZZ
+d888888888888888,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+888888888888888888a,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ZZZZZZZZZZZZZZZZZZZZ888888888
+888888888888888888888ba,_d'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ZZZZZZZZZZZZZZZZZ88888888888888
+8888888888888888888888888888bbbaaa,,,______,ZZZZZZZZZZZZZZZ888888888888888888
+88888888888888888888888888888888888888888ZZZZZZZZZZZZZZZ888888888888888888888
+8888888888888888888888888888888888888888ZZZZZZZZZZZZZZ88888888888888888888888
+888888888888888888888888888888888888888ZZZZZZZZZZZZZZ888888888888888888888888
+8888888888888888888888888888888888888ZZZZZZZZZZZZZZ88888888888888888888888888
+88888888888888888888888888888888888ZZZZZZZZZZZZZZ8888888888888888888888888888
+8888888888888888888888888888888888ZZZZZZZZZZZZZZ88888888888888888 Normand&nbsp; 88
+88888888888888888888888888888888ZZZZZZZZZZZZZZ8888888888888888888 Veilleux 88
+8888888888888888888888888888888ZZZZZZZZZZZZZZ88888888888888888888888888888888
+
+
+Since I could not seem to improve the face, I decided to try and
+experiment with shading to see if that could help.&nbsp; Well, it did
+not turn out the way I thought it would: the shading was too pale.&nbsp;
+So I ended up losing half an hour to get to this stage:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _______
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,,ad8888888888bba,_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ad88888I888888888888888ba,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88888888I88888888888888888888a,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d88888888I88888888888888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d88888PP""" """YY88888888888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d88"'__,,--------,,,;:::""Y8888888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,8II:'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .,:.":::IIII8888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,I88:.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...::::::Y88III8888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II88I:.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :..:::::Y88888I888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888'..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :.:...:::::888888I8888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II8888.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .::::::Y888888I8888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .:::::::8888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888;&nbsp;&nbsp; .aag,&nbsp;&nbsp;&nbsp; ,gaaP""... .:.::::::88888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888I:::::::"b&nbsp; d":::::;;::, :..:::::88888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888'::&lt;^I88>I&nbsp; I::.&lt;^I888'&nbsp;&nbsp; ..:.::;888888888I88I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II88888&nbsp; . `""" I&nbsp; I:.. `""" .&nbsp;&nbsp; ..:.::d888888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; III88888,&nbsp; ````&nbsp;&nbsp;&nbsp;&nbsp; b;.&nbsp;&nbsp; ''''&nbsp;&nbsp; ..:.:::8888888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,III88888I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ..:.::::8888888888I888I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; III888888I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,&nbsp;&nbsp; :,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :::.::::88888888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888888;:&nbsp;&nbsp;&nbsp;&nbsp; I'&nbsp;&nbsp;&nbsp; "I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :.:.:::::88888888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888888I:.&nbsp;&nbsp;&nbsp; `"baad":&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .:::.::::88888888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]I888888888;:.:.&nbsp;&nbsp;&nbsp; :.:..:.:: ..:.:.:::::88888888888I8888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888I:. ."Y88bd888P"&nbsp;&nbsp; ..::.::::::88888888888I8888I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8888888888b::.&nbsp; `""""'.:.:.:.::.::::::;88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888a:.&nbsp;&nbsp; :::::.:. .:,aP:::::;d88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II8888888888888b;.&nbsp;&nbsp;&nbsp; ..::.;aP":::::;aP:88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888888ba,__,,aP"::::::;aP::::8888888888I888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II88888888888888888b"ba;;;;aadP":::::::I888888888I888888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II88888888888888888 .:::::::::::::::::I888888888I8888888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II8888888888888888&nbsp; .::::::::::::::..`888888888I8888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8888888888888888,&nbsp;&nbsp; ..::.:::::.:..&nbsp; Y88888888I8888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II8888888888888888b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .::..:..&nbsp;&nbsp;&nbsp;&nbsp; `88888888I88888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888888P"I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ..:.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888888I8888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888P"::.`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y8888888I88888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888888888P".:::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `8888888I8888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8888888I888888888888888b
+
+
+Later, I decided to give line drawing another chance and started
+working on the face with no shading.&nbsp; I managed to get a decent
+looking nose in about 5 minutes so I continued and slowly but
+surely the rest of the face took on a new look that was much better
+than anything obtained so far.&nbsp; It took about half an hour of trial
+and error to get to this:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _______
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,,ad8888888888bba,_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ad88888I888888888888888ba,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88888888I88888888888888888888a,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d888888888I8888888888888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d88888PP"""" ""YY88888888888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d88"'__,,--------,,,,._ ""Y8888888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,8II-'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "```IIII8888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,I88'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Y88III8888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II88I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Y88888I888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `888888I8888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II8888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y888888I8888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `8888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888,&nbsp;&nbsp;&nbsp; ---.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ..-----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888I&nbsp;&nbsp; _,,_ `.&nbsp; .'&nbsp;&nbsp; _,,_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888'&nbsp; &lt;'(@@> |&nbsp; |&nbsp;&nbsp; &lt;'(@@>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,888888888I88I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II88888&nbsp;&nbsp;&nbsp; `"""&nbsp; |&nbsp; |&nbsp;&nbsp;&nbsp; `"""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d888888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; III88888,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8888888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,III88888I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8888888888I888I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; III888888I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,&nbsp;&nbsp; ',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888888,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (_&nbsp;&nbsp;&nbsp; _)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888888I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `--'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88888888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]I888888888,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,P88888888888I8888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888I&nbsp;&nbsp;&nbsp; "Y88bd888P"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d" 88888888888I8888I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8888888888b&nbsp;&nbsp;&nbsp;&nbsp; `"""""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,8"&nbsp; ,88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,P"'&nbsp;&nbsp; ,d88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II8888888888888b,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,d"'&nbsp;&nbsp;&nbsp; ,aP"88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888888ba,__,,ad""&nbsp;&nbsp;&nbsp; _,aP"&nbsp;&nbsp; 8888888888I888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II88888888888888888b"ba,,,,aadP"'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I888888888I888888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II88888888888888888&nbsp; `""""'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I888888888I8888888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II8888888888888888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `888888888I8888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8888888888888888,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y88888888I8888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II8888888888888888b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `88888888I88888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888888P"I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88888888I8888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888P"&nbsp;&nbsp; `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y8888888I88888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888888888P"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `8888888I8888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 888888I8888888888888888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888888888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,888888I88888888888888888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d88888888888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d888888I8888888888ZZZZZZZ
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ad888888888888I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8888888I8888ZZZZZZZZZZZZZ
+&nbsp;&nbsp;&nbsp; ,d888888888888888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 888888IZZZZZZZZZZZZZZZZZZ
+&nbsp; ,d888888888888P'8P'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y888ZZZZZZZZZZZZZZZZZZZZZ
+&nbsp;,8888888888888,&nbsp; "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ZZZZZZZZZZZZZZZZZZZZZZZZ
+d888888888888888,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+888888888888888888a,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ZZZZZZZZZZZZZZZZZZZZ888888888
+888888888888888888888ba,_d'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ZZZZZZZZZZZZZZZZZ88888888888888
+8888888888888888888888888888bbbaaa,,,______,ZZZZZZZZZZZZZZZ888888888888888888
+88888888888888888888888888888888888888888ZZZZZZZZZZZZZZZ888888888888888888888
+8888888888888888888888888888888888888888ZZZZZZZZZZZZZZ88888888888888888888888
+888888888888888888888888888888888888888ZZZZZZZZZZZZZZ888888888888888888888888
+8888888888888888888888888888888888888ZZZZZZZZZZZZZZ88888888888888888888888888
+88888888888888888888888888888888888ZZZZZZZZZZZZZZ8888888888888888888888888888
+8888888888888888888888888888888888ZZZZZZZZZZZZZZ88888888888888888 Normand&nbsp; 88
+88888888888888888888888888888888ZZZZZZZZZZZZZZ8888888888888888888 Veilleux 88
+8888888888888888888888888888888ZZZZZZZZZZZZZZ88888888888888888888888888888888
+
+
+I decided to consider this the final unshaded version.
+
+Now, the question remained: would it be worthwhile to add in the
+shading?&nbsp; I showed the unshaded version of the picture to a friend
+who is a graphic designer.&nbsp; It didn't take him long to mention
+shading as the next step.&nbsp; I showed him the first attempt
+(displayed above) and admitted that I had no idea how to improve
+it.&nbsp; He suggested using a printed copy of my unshaded picture and
+drawing the shading on it first, before attempting to draw it on
+the computer.
+
+Well, that almost discouraged me right there.&nbsp; Drawing simple stuff
+on paper was not a problem, but when it came to shading I didn't
+have a clue how it could be done.&nbsp; He helped by pointing out that
+I could start by drawing the outer edge of the faintest shading as
+though it were a regular object.&nbsp; I could then define another line
+that would represent the "middle ground" of the shading.&nbsp; He
+suggested not to use more than 2 or 3 different levels of shading.&nbsp;
+So off to the drawing board I went.
+
+I did not keep all the stages of the shading, but suffice to say
+that it took about twice as much time then all the rest of the
+picture.&nbsp; This was the final result of the shaded version:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _______
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,,ad8888888888bba,_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ad88888I888888888888888ba,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88888888I88888888888888888888a,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d888888888I8888888888888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d88888PP"""" ""YY88888888888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d88"'__,,--------,,,,.;ZZZY8888888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,8IIl'"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;l"ZZZIII8888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,I88l;'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;lZZZZZ888III8888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II88Zl;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;llZZZZZ888888I888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888Zl;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .;;;;;lllZZZ888888I8888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II8888Z;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `;;;;;''llZZ8888888I8888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888Z;'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .;lZZZ8888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888Z; _,aaa,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .,aaaaa,__.l;llZZZ88888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888IZZZZZZZZZ,&nbsp; .ZZZZZZZZZZZZZZ;llZZ88888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888IZZ&lt;'(@@>Z|&nbsp; |ZZZ&lt;'(@@>ZZZZ;;llZZ888888888I88I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II88888;&nbsp;&nbsp; `""" ;|&nbsp; |ZZ; `"""&nbsp;&nbsp;&nbsp;&nbsp; ;;llZ8888888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .;llZZ8888888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888888Z;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .;;llZZZ8888888888I888I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; III888888Zl;&nbsp;&nbsp;&nbsp; ..,&nbsp;&nbsp; `;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,;;lllZZZ88888888888I888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888888Z;;...;(_&nbsp;&nbsp;&nbsp; _)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,;;;llZZZZ88888888888I888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II88888888Zl;;;;;' `--'Z;.&nbsp;&nbsp; .,;;;;llZZZZ88888888888I888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]I888888888Z;;;;'&nbsp;&nbsp; ";llllll;..;;;lllZZZZ88888888888I8888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888Zl.;;"Y88bd888P";;,..;lllZZZZZ88888888888I8888I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8888888888Zl;.; `"PPP";;;,..;lllZZZZZZZ88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888Zl;;. `;;;l;;;;lllZZZZZZZZW88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II8888888888888Zl;.&nbsp;&nbsp;&nbsp; ,;;lllZZZZZZZZWMZ88888888888I88888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8888888888888888ZbaalllZZZZZZZZZWWMZZZ8888888888I888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II88888888888888888b"WWZZZZZWWWMMZZZZZZI888888888I888888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II88888888888888888;ZZMMMMMMZZZZZZZZllI888888888I8888888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `II8888888888888888 `;lZZZZZZZZZZZlllll888888888I8888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II8888888888888888, `;lllZZZZllllll;;.Y88888888I8888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II8888888888888888b&nbsp;&nbsp; .;;lllllll;;;.;..88888888I88888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888888PZI;.&nbsp; .`;;;.;;;..; ...88888888I8888888888,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888888PZ;;';;.&nbsp;&nbsp; ;. .;.&nbsp; .;. .. Y8888888I88888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888888888PZ;;'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `8888888I8888888888888b,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II888888888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 888888I8888888888888888b
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,II888888888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,888888I88888888888888888
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,d88888888888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d888888I8888888888ZZZZZZZ
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ad888888888888I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8888888I8888ZZZZZZZZZZZZZ
+&nbsp;&nbsp;&nbsp; ,d888888888888888'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 888888IZZZZZZZZZZZZZZZZZZ
+&nbsp; ,d888888888888P'8P'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y888ZZZZZZZZZZZZZZZZZZZZZ
+&nbsp;,8888888888888,&nbsp; "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ZZZZZZZZZZZZZZZZZZZZZZZZ
+d888888888888888,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+888888888888888888a,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ZZZZZZZZZZZZZZZZZZZZ888888888
+888888888888888888888ba,_d'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,ZZZZZZZZZZZZZZZZZ88888888888888
+8888888888888888888888888888bbbaaa,,,______,ZZZZZZZZZZZZZZZ888888888888888888
+88888888888888888888888888888888888888888ZZZZZZZZZZZZZZZ888888888888888888888
+8888888888888888888888888888888888888888ZZZZZZZZZZZZZZ88888888888888888888888
+888888888888888888888888888888888888888ZZZZZZZZZZZZZZ888888888888888888888888
+8888888888888888888888888888888888888ZZZZZZZZZZZZZZ88888888888888888888888888
+88888888888888888888888888888888888ZZZZZZZZZZZZZZ8888888888888888888888888888
+8888888888888888888888888888888888ZZZZZZZZZZZZZZ88888888888888888 Normand&nbsp; 88
+88888888888888888888888888888888ZZZZZZZZZZZZZZ8888888888888888888 Veilleux 88
+8888888888888888888888888888888ZZZZZZZZZZZZZZ88888888888888888888888888888888
+
+As you can see, the grid system that I have been working with since
+January '94 allows to very quickly transfer the large details from
+paper to screen while keeping the proportions of the original
+picture.&nbsp; This eliminates a lot of the time-consuming
+experimentation otherwise required to get the right proportions.&nbsp;
+You can't go wrong with the grid:&nbsp; the characters that compose it
+allow you to "see" where you should start and where you should
+stop.&nbsp; The skills required to use it are fairly simple as well,
+although they do need to be practiced.&nbsp; One thing the grid cannot
+do though, is eliminate the experimentation needed for the
+finishing touch:&nbsp; the smaller details, the smoothing, the shading,
+etc.
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; ---&lt;-&lt;@&nbsp;&nbsp;&nbsp; ---&lt;-&lt;@&nbsp;&nbsp; ---&lt;-&lt;@&nbsp;&nbsp;&nbsp; ---&lt;-&lt;@&nbsp;&nbsp; ---&lt;-&lt;@
+
+A big thank you goes to Rowan Crawford who spent time revising an
+earlier draft of this document and who provided many useful
+suggestions to improve its contents.
+
+
+
+The pictures I post are at their best when printed with a
+'Line Printer 16.67 cpi' font or equivalent.
+
+
+&nbsp;&nbsp;&nbsp; ___&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _______
+&nbsp; ,88888,&nbsp;&nbsp;&nbsp; ,d88888888a
+&nbsp;,88" `Y8,&nbsp; ,88"'&nbsp;&nbsp; `"Y8i&nbsp;&nbsp;&nbsp;&nbsp; ,ggggg,&nbsp;&nbsp; ,ggggg,&nbsp;&nbsp; ,ggg,,ggg,,ggg,
+&nbsp;I8b,&nbsp; `8b ,88'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d8I&nbsp;&nbsp;&nbsp; dP"&nbsp; "Y8ggg8""""8I&nbsp; ,8" "8P" "8P" "8,
+&nbsp;`Y8P&nbsp;&nbsp; 88.88'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88'&nbsp;&nbsp; i8'&nbsp;&nbsp;&nbsp; ,8I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8I&nbsp; I8&nbsp;&nbsp; 8I&nbsp;&nbsp; 8I&nbsp;&nbsp; 8I
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (8V8'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d8P&nbsp;&nbsp;&nbsp; I8,&nbsp;&nbsp; ,d8'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y8,,dP&nbsp;&nbsp; 8I&nbsp;&nbsp; 8I&nbsp;&nbsp; Yb,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (88P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,8P&nbsp;&nbsp;&nbsp;&nbsp; `Y8888P"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Y88P'&nbsp;&nbsp; 8I&nbsp;&nbsp; 8I&nbsp;&nbsp; `Y8ba
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d88&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d8'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,8P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,,ggdd888bbgg,,_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d8P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I8I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,gd8888P"""""""""Y8888bg,_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ,88&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I8b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _,gd88P"""'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `"""Y88bg,_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 88'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Y8b,__,gd8P""'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Normand Veilleux&nbsp;&nbsp;&nbsp;&nbsp; `""Y8bg,_
+&nbsp;&nbsp;&nbsp;&nbsp; d8P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Y88888P"'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nveilleu@emr1.emr.ca&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `"Y88ba</B>
+
+
+</PRE>
+
+<CENTER><PRE><B><A HREF="http://www.afn.org/~afn39695/veilleux.htm">To Normand Veilleux's ASCII Art</A></B></PRE></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<CENTER><FORM><SELECT NAME="list" onChange="location.href=this.form.list.options[this.form.list.selectedIndex].value"><OPTION VALUE="please.html"><B>Guidelines
+For Using this ASCII Art&nbsp;<OPTION VALUE="index-3.html#home">Home Page&nbsp;<OPTION VALUE="#top">Top
+of this Page&nbsp;<OPTION VALUE="new.html">New ASCII Art by joan stark&nbsp;<OPTION VALUE="http://www.geocities.com/SoHo/Gallery/6446/index.html#javahome">JavaScript
+Animations&nbsp;<OPTION VALUE="disney.html">Disney Characters&nbsp;<OPTION VALUE="warnerb.html">WarnerBros/Universal
+Characters&nbsp;<OPTION VALUE="sesame.html">Sesame Street Characters&nbsp;<OPTION VALUE="comics.html">Comic
+Strip Characters&nbsp;<OPTION VALUE="crtoon2.html">Other Cartoon Characters&nbsp;<OPTION VALUE="aquatic.html">Aquatic
+Creatures&nbsp;<OPTION VALUE="birds.html">Birds&nbsp;<OPTION VALUE="farm.html">Farm
+Animals&nbsp;<OPTION VALUE="insects.html">Insects/Arachnids/Arthropods&nbsp;<OPTION VALUE="pets.html">Cats/Dogs/Rabbits/Mice
+(PETS)&nbsp;<OPTION VALUE="reptiles.html">Reptiles/Amphibians&nbsp;<OPTION VALUE="wildlife.html">North
+American Wildlife&nbsp;<OPTION VALUE="zoo.html">Zoo Animals&nbsp;<OPTION VALUE="newyear.html">New
+Year Celebration&nbsp;<OPTION VALUE="valentin.html">Valentine's Day/Teddy
+Bears<OPTION VALUE="easter.html">Easter/Spring&nbsp;<OPTION VALUE="stpat.html">St.Patrick's
+Day&nbsp;<OPTION VALUE="july4.html">July 4th&nbsp;<OPTION VALUE="haloween.html">Halloween/Spooky<OPTION VALUE="tgiving.html">Thanksgiving/Fall&nbsp;<OPTION VALUE="xmas.html">Christmas/Winter<OPTION VALUE="xmastory.html">Christmas
+Stories&nbsp;<OPTION VALUE="baby.html">New Baby&nbsp;<OPTION VALUE="wedding.html">Wedding/Thank
+You&nbsp;<OPTION VALUE="bday.html">Birthday<OPTION VALUE="mythical.html">Mythical
+People &amp; Creatures&nbsp;<OPTION VALUE="celestal.html">Celestial<OPTION VALUE="nature.html">Nature
+&amp; Scenery&nbsp;<OPTION VALUE="build.html">Buildings: Houses/Castles/more&nbsp;<OPTION VALUE="flowers.html">Flowers/Plants&nbsp;<OPTION VALUE="religion.html">Religion<OPTION VALUE="bodypart.html">Body
+Parts&nbsp;<OPTION VALUE="food.html">Food/Drink<OPTION VALUE="sports.html">Sports&nbsp;<OPTION VALUE="swim.html">Swimming&nbsp;<OPTION VALUE="electro.html">Gadgets
+and Electronic Things&nbsp;<OPTION VALUE="computer.html">Computers&nbsp;<OPTION VALUE="school.html">School/Education/Music/Tools<OPTION VALUE="flag.html">Flags&nbsp;<OPTION VALUE="transp.html">Transportation<OPTION VALUE="oddsends.html">Odds
+&amp; Ends&nbsp;<OPTION VALUE="cloth.html">Clothing/Personal Items<OPTION VALUE="font.html">Fonts&nbsp;<OPTION VALUE="men.html">Men&nbsp;<OPTION VALUE="women.html">Women<OPTION VALUE="couples.html">Couples&nbsp;<OPTION VALUE="kids.html">Babies/Kids<OPTION VALUE="people.html">Characters&nbsp;<OPTION VALUE="sigs.html">Signature
+Files&nbsp;<OPTION VALUE="stamps.html">Email Stamps&nbsp;<OPTION VALUE="logo.html">Logos/Signs<OPTION VALUE="scroll.html">Scrolling&nbsp;<OPTION VALUE="design.html">Shapes/Designs<OPTION VALUE="small.html">Small
+ASCII&nbsp;<OPTION VALUE="conversi.html">Solid -> Line&nbsp;<OPTION VALUE="spunk.html">Poems/Puns/Stories&nbsp;<OPTION VALUE="http://www.geocities.com/SoHo/Gallery/6446/">FUNNYBONE
+Issues&nbsp;<OPTION VALUE="color.html">Colorized ASCII&nbsp;<OPTION VALUE="favorite.html">My
+FAVORITE ASCII Art&nbsp;<OPTION VALUE="asciinfo.html">What is ASCII art?<OPTION VALUE="faq.html">ASCII
+ART FAQ&nbsp;<OPTION VALUE="minifaq.html">Mini-FAQ on Text Editors/Fonts&nbsp;<OPTION VALUE="cnvsprog.html">GIFSCII
+Info&nbsp;<OPTION VALUE="faq.html#figlet">FIGlet Info&nbsp;<OPTION VALUE="smiley.html">Smileys-Emoticons-Acronyms<OPTION VALUE="howto.html">How
+I Make This ASCII Art<OPTION VALUE="dcau.html">Tutorial by Daniel Au&nbsp;<OPTION VALUE="history.html">History
+of ASCII Art&nbsp;<OPTION VALUE="me.html">Who is Joan/jgs/spunk?&nbsp;<OPTION VALUE="awards.html">Site
+Awards and Recognition<OPTION VALUE="midiinfo.html">Midi File Information&nbsp;<OPTION VALUE="gifinfo.html">Animated
+GIF Information&nbsp;<OPTION VALUE="http://www.geocities.com/SoHo/">GEOCITIES/SPONSOR</B></SELECT><INPUT TYPE=BUTTON VALUE="-=[ GO ]=-" onClick="location.href=this.form.list.options[this.form.list.selectedIndex].value"></FORM>
+<BR><A HREF="index-2.html#home"><IMG SRC="jgshome2.gif" ALT="to main page" BORDER=0 HEIGHT=36 WIDTH=99></A><A HREF="search1.html"><IMG SRC="jgssearch.gif" ALT="Search this site" BORDER=0 HEIGHT=36 WIDTH=99></A></CENTER>
+
+<CENTER><PRE><B><FONT COLOR="#009900">.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.</FONT></B></PRE></CENTER>
+
+<CENTER></CENTER>
+
+</BODY>
+</HTML>
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="../../../us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="../../../geocities.com/js_source/geov2.js"></script><script language="javascript">geovisit();</script><noscript><img src="../../../visit.webhosting.yahoo.com/visit999e.gif?us1122011500" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=76001544&amp;t=1122011500&amp;f=us-w76" ALT=1 WIDTH=1 HEIGHT=1>
